@@ -1,12 +1,18 @@
 ---
-import { Image } from 'astro:assets';
-import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
+import { Image } from "astro:assets";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getLocalizedPath,
+} from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<section
+  class="relative h-screen flex items-center justify-center overflow-hidden"
+>
   <!-- Background Image -->
   <div class="absolute inset-0 z-0">
     <Image
@@ -18,13 +24,14 @@ const t = useTranslations(lang);
       loading="eager"
       decoding="async"
     />
-    <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60">
+    </div>
   </div>
 
   <!-- Content -->
   <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-      {t('hero.title')} 💜
+      {t("hero.title")} 💜
     </h1>
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -32,21 +39,33 @@ const t = useTranslations(lang);
         href="#about"
         class="px-8 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-[var(--color-primary)] transition-all duration-300 min-w-[160px]"
       >
-        {t('hero.learnMore')}
+        {t("hero.learnMore")}
       </a>
       <a
-        href={getLocalizedPath(lang, '/join')}
+        href={getLocalizedPath(lang, "/join")}
         class="px-8 py-3 bg-white text-[var(--color-primary)] rounded-full font-medium hover:bg-[var(--color-cream)] transition-all duration-300 min-w-[160px]"
       >
-        {t('hero.joinUs')}
+        {t("hero.joinUs")}
       </a>
     </div>
   </div>
 
   <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-    <svg class="w-6 h-6 text-white animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+  <a
+    href="#about"
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+  >
+    <svg
+      class="w-6 h-6 text-white animate-bounce"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
     </svg>
-  </div>
+  </a>
 </section>
