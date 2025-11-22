@@ -13,7 +13,7 @@ export default defineConfig({
     routing: {
       prefixDefaultLocale: true,
       // TODO: explore
-      redirectToDefaultLocale: false,
+      redirectToDefaultLocale: true,
     },
   },
   integrations: [

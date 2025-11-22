@@ -26,7 +26,17 @@ const events = defineCollection({
   }),
 });
 
+const faq = defineCollection({
+  type: 'content',
+  schema: z.object({
+    question: z.string(),
+    order: z.number(),
+    category: z.string().optional(),
+  }),
+});
+
 export const collections = {
   blog,
   events,
+  faq,
 };
