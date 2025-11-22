@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+import { getLangFromUrl } from '../i18n/utils';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  tags?: string[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = "G:URL*s Coding Club - Empowering FLINTA* individuals through coding, community, and collaboration in Vienna, Austria.",
+  image,
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  author,
+  tags,
+  noindex = false,
+} = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Component with comprehensive meta tags and structured data -->
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      type={type}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      author={author}
+      tags={tags}
+      lang={lang}
+      noindex={noindex}
+    />
+  </head>
+  <body class="bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-200">
+    <slot />
+  </body>
+</html>

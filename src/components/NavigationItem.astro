@@ -1,0 +1,25 @@
+---
+/**
+ * NavigationItem component - A simple, semantic navigation link
+ *
+ * This component renders a single navigation link with proper semantic HTML
+ * and consistent styling.
+ */
+interface Props {
+  /** The URL to link to */
+  href: string;
+  /** The text to display for the link */
+  label: string;
+  /** Additional CSS classes for styling */
+  className?: string;
+}
+
+const { href, label, className = '' } = Astro.props;
+---
+
+<a
+  href={href}
+  class={`hover:text-[var(--color-accent)] transition-colors ${className}`}
+>
+  {label}
+</a>

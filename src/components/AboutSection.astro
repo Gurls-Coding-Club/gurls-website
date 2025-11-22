@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import Section from './Section.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Section id="about" bgColor="cream">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-bold mb-8">
+      {t('about.title')}
+    </h2>
+
+    <div class="mb-8">
+      <Image
+        src="/team-photo.jpg"
+        alt="G:URL*s team coding together"
+        class="rounded-2xl shadow-xl w-full max-w-2xl mx-auto"
+        width={896}
+        height={504}
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <p class="text-lg leading-relaxed text-[var(--text-secondary)]">
+      {t('about.description')}
+    </p>
+  </div>
+</Section>
+
+<!-- What We Do -->
+<Section id="what-we-do" bgColor="secondary">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+      {t('whatWeDo.title')}
+    </h2>
+
+    <p class="text-lg leading-relaxed text-[var(--text-secondary)] mb-6">
+      {t('whatWeDo.description')}
+    </p>
+
+    <p class="text-lg font-medium text-[var(--text-primary)]">
+      {t('whatWeDo.footer')}
+    </p>
+  </div>
+</Section>
+
+<!-- Who Can Join -->
+<Section id="who-can-join" bgColor="cream">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+      {t('whoCanJoin.title')}
+    </h2>
+
+    <p class="text-lg leading-relaxed text-[var(--text-secondary)] mb-6">
+      {t('whoCanJoin.description')}
+    </p>
+
+    <p class="text-md font-medium text-[var(--color-primary)] italic">
+      {t('whoCanJoin.flintaExplanation')}
+    </p>
+  </div>
+</Section>

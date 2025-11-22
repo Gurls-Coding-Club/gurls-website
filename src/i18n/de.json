@@ -1,0 +1,158 @@
+{
+  "nav": {
+    "about": "Über Uns",
+    "ourStory": "Unsere Geschichte",
+    "ourMission": "Unsere Mission",
+    "team": "Team",
+    "events": "Veranstaltungen",
+    "blog": "Blog",
+    "news": "Neuigkeiten",
+    "faq": "FAQ",
+    "getInvolved": "Mitmachen",
+    "contact": "Kontakt",
+    "joinUs": "Beitreten",
+    "volunteer": "Freiwillige",
+    "sponsor": "Sponsor Werden",
+    "donate": "Spenden"
+  },
+  "hero": {
+    "title": "Coding Club für FLINTA* in Wien",
+    "learnMore": "Mehr Erfahren",
+    "joinUs": "Beitreten"
+  },
+  "about": {
+    "title": "Lerne G:URL*s kennen",
+    "description": "Wir sind ein Coding Club für die FLINTA*-Community, offen für alle, die daran interessiert sind, ihre Programmierkenntnisse zu erlernen oder zu verbessern. Egal, ob du gerade erst anfängst oder bereits Erfahrung hast, du findest hier einen unterstützenden Raum, um dich zu vernetzen, Fragen zu stellen und in deinem eigenen Tempo zu wachsen!"
+  },
+  "standFor": {
+    "title": "Wofür Wir Stehen",
+    "subtitle": "Der Name G:URL*s spiegelt wider, was uns wichtig ist:",
+    "growing": {
+      "title": "Wachsen",
+      "description": "Unterstützung der persönlichen und beruflichen Entwicklung"
+    },
+    "uniting": {
+      "title": "Vereinen",
+      "description": "Schaffung einer stärkenden, inklusiven Gemeinschaft"
+    },
+    "redefining": {
+      "title": "Neu Definieren",
+      "description": "Normen hinterfragen und Tech-Kultur neu gestalten"
+    },
+    "learning": {
+      "title": "Lernen",
+      "description": "Neugier, Entdeckung und Kompetenzaufbau annehmen"
+    },
+    "solving": {
+      "title": "Lösen",
+      "description": "Code nutzen, um gemeinsam Wirkung zu erzielen und Herausforderungen zu meistern"
+    },
+    "ourMission": "Unsere Mission",
+    "gurlsFaces": "G:URL*s Gesichter"
+  },
+  "whatWeDo": {
+    "title": "Was Wir Machen",
+    "description": "Wir veranstalten zweiwöchentlich Events auf Englisch, die von anfängerfreundlichen Workshops, praktischen Coding-Sessions und Tech-Talks bis hin zu sozialen Events und Co-Working-Abenden reichen. Einige Events konzentrieren sich auf das Erlernen neuer Tools oder das Erstellen von Projekten, während andere einfach dazu da sind, sich mit anderen in der Tech-Branche zu vernetzen.",
+    "footer": "Du bist herzlich eingeladen, so oft teilzunehmen, wie du möchtest, ohne Vorbereitung oder langfristige Verpflichtung!"
+  },
+  "whoCanJoin": {
+    "title": "Wer Kann Beitreten",
+    "description": "Wenn du dich als FLINTA* identifizierst und Interesse an Tech hast, bist du willkommen, unabhängig von deinem Hintergrund, deiner Erfahrung oder Ausbildung. Du musst kein Experte sein, nur neugierig und offen fürs Lernen. Wir sind ein Raum für Anfänger*innen, Quereinsteiger*innen, Hobbyprogrammierer*innen und alle, die Tech in einer unterstützenden Umgebung erkunden möchten.",
+    "flintaExplanation": "FLINTA* steht für Female, Lesbian, Intersex, Non-binary, Trans, Agender und andere nicht-binäre Geschlechtsidentitäten."
+  },
+  "upcomingEvents": {
+    "title": "Kommende Veranstaltungen",
+    "subtitle": "Bereit zu coden, zu vernetzen und zu kollaborieren? Schau dir unsere kommenden Workshops, Meetups und Community-Sessions an:",
+    "calendar": "Veranstaltungskalender",
+    "viewAll": "Alle Anzeigen"
+  },
+  "getInvolvedSection": {
+    "title": "Dieser Raum Gehört Auch Dir!",
+    "subtitle": "Code, Connect, Create",
+    "cta": "Mitmachen"
+  },
+  "footer": {
+    "stayInTouch": "Bleib in Kontakt",
+    "address": "G:URL*s Coding Club\nKreativstraße 12,\n1150 Wien, Österreich",
+    "getInvolved": "Mitmachen",
+    "supportInitiative": "Unterstütze Unsere Initiative",
+    "sponsors": "Vielen Dank an Unsere Sponsoren",
+    "photoCredits": "Bildnachweis",
+    "photoCreditsName": "TODO: Echten Fotografennamen hinzufügen",
+    "bankingInfo": {
+      "accountHolder": "Kontoinhaber",
+      "reference": "Verwendungszweck: Spende G:URL*s"
+    },
+    "copyright": "Copyright G:URL*s Coding Club 2025",
+    "privacyPolicy": "Datenschutz",
+    "cookiePolicy": "Cookie-Richtlinie",
+    "termsOfUse": "Nutzungsbedingungen"
+  },
+  "pages": {
+    "home": {
+      "title": "G:URL*s - Coding Club für FLINTA* in Wien",
+      "description": "Wir sind ein Coding Club für die FLINTA*-Community, offen für alle, die daran interessiert sind, ihre Programmierkenntnisse zu erlernen oder zu verbessern."
+    },
+    "blog": {
+      "title": "Blog | G:URL*s Coding Club",
+      "description": "Lesen Sie die neuesten Nachrichten, Tutorials und Geschichten aus der G:URL*s Community.",
+      "heroTitle": "Unser Blog",
+      "heroSubtitle": "Geschichten, Einblicke und Updates aus der G:URL*s Community",
+      "noPosts": "Noch keine Blogbeiträge. Schauen Sie bald wieder vorbei!",
+      "readMore": "Weiterlesen",
+      "newsletterTitle": "Bleib auf dem Laufenden",
+      "newsletterText": "Abonniere unseren Newsletter für die neuesten Beiträge, Eventankündigungen und Community-News.",
+      "emailPlaceholder": "deine.email@beispiel.de",
+      "subscribe": "Abonnieren"
+    },
+    "contact": {
+      "title": "Kontakt | G:URL*s Coding Club",
+      "description": "Kontaktiere G:URL*s Coding Club. Sende uns eine Nachricht, stelle Fragen oder teile deine Ideen.",
+      "heroTitle": "Kontaktiere Uns",
+      "heroSubtitle": "Hast du eine Frage, Idee oder möchtest einfach nur Hallo sagen? Wir freuen uns von dir zu hören!",
+      "sectionTitle": "Lass Uns Vernetzen",
+      "sectionText": "Egal, ob du unserer Community beitreten, ein Event sponsern, dich freiwillig engagieren oder einfach nur über Code plaudern möchtest - wir sind für dich da.",
+      "emailLabel": "E-Mail",
+      "locationLabel": "Standort",
+      "locationText": "Wien, Österreich",
+      "followLabel": "Folge Uns",
+      "formTitle": "Sende uns eine Nachricht",
+      "nameLabel": "Name",
+      "namePlaceholder": "Dein Name",
+      "emailFieldLabel": "E-Mail",
+      "emailPlaceholder": "deine.email@beispiel.de",
+      "subjectLabel": "Betreff",
+      "subjectPlaceholder": "Wähle einen Betreff",
+      "subjectOptions": {
+        "join": "Ich möchte beitreten",
+        "volunteer": "Ich möchte mitmachen",
+        "sponsor": "Sponsoring-Anfrage",
+        "collab": "Zusammenarbeit",
+        "feedback": "Feedback",
+        "other": "Sonstiges"
+      },
+      "messageLabel": "Nachricht",
+      "messagePlaceholder": "Erzähl uns, wie wir helfen können...",
+      "sendButton": "Nachricht Senden",
+      "sendingButton": "Wird Gesendet...",
+      "successMessage": "Vielen Dank! Deine Nachricht wurde erfolgreich gesendet. Wir melden uns bald bei dir!",
+      "errorMessage": "Hoppla! Etwas ist schiefgelaufen. Bitte versuche es erneut oder sende uns direkt eine E-Mail."
+    },
+    "blogPost": {
+      "home": "Start",
+      "blog": "Blog",
+      "backToBlog": "Zurück zum Blog",
+      "sharePost": "Teile diesen Beitrag",
+      "by": "Von"
+    },
+    "notFound": {
+      "title": "404 - Seite Nicht Gefunden | G:URL*s Coding Club",
+      "description": "Die Seite, die du suchst, existiert nicht.",
+      "number": "404",
+      "heading": "Seite Nicht Gefunden",
+      "message": "Ups! Die Seite, die du suchst, existiert nicht. Sie wurde möglicherweise verschoben oder gelöscht.",
+      "homeButton": "Zur Startseite",
+      "contactButton": "Kontaktiere Uns"
+    }
+  }
+}

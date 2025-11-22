@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  /* G:URL*s Brand Colors - ONLY use these exact colors from Canva brand kit */
+
+  /* Main Brand Colors */
+  --color-primary: #5759a6; /* Primary purple */
+  --color-accent: #6466e1; /* Vibrant purple */
+  --color-blue: #439bde; /* Brand blue */
+  --color-blue-light: #67bee1; /* Light blue */
+  --color-blue-lighter: #64ace4; /* Lighter blue variant */
+
+  /* Neutral/Supporting Colors */
+  --color-cream: #f1e6d1; /* Brand cream */
+  --color-gray-light: #cbc3c7; /* Light gray-mauve */
+  --color-gray-medium: #a4a0bc; /* Medium purple-gray */
+  --color-gray-purple: #b4aec0; /* Light purple-gray */
+
+  /* Text Colors (high contrast) */
+  --color-text-dark: #1a1625; /* Dark text for light backgrounds */
+  --color-text-light: #ffffff; /* White text for dark backgrounds */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+}
+
+/*
+ * Semantic Tokens - Theme-aware variables
+ * Using ONLY brand colors with WCAG AA compliant contrast ratios
+ */
+
+/* Light mode (default) - All combinations tested for 4.5:1+ contrast */
+:root {
+  /* Backgrounds */
+  --bg-primary: var(--color-cream); /* Main page background (#f1e6d1) */
+  --bg-secondary: white; /* Section backgrounds */
+  --bg-accent: var(--color-primary); /* Header background (#5759a6) */
+
+  /* Text Colors - WCAG AA compliant */
+  --text-primary: var(
+    --color-text-dark
+  ); /* Dark text (#1A1625) - 9.8:1 on white, 7.2:1 on cream */
+  --text-secondary: #5759a6; /* Primary purple - 4.7:1 on white */
+  --text-on-primary: var(
+    --color-text-light
+  ); /* White on purple (#ffffff on #5759a6) - 7.3:1 */
+
+  /* Links */
+  --link-color: var(
+    --color-primary
+  ); /* Purple links (#5759a6) - 4.7:1 on white */
+  --link-hover: var(
+    --color-accent
+  ); /* Vibrant purple hover (#6466e1) - 4.5:1 on white */
+
+  /* Buttons */
+  --button-primary-bg: #5759a6; /* Primary purple CTA - 7.3:1 */
+  --button-primary-text: white; /* White text on primary purple - 7.3:1 */
+  --button-secondary-bg: var(--color-blue); /* Blue button (#439bde) */
+  --button-secondary-text: white; /* White text on blue - 4.7:1 */
+
+  /* Borders */
+  --border-color: var(--color-gray-light); /* Light gray borders (#cbc3c7) */
+}

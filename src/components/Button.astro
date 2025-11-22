@@ -1,0 +1,60 @@
+---
+/**
+ * Reusable Button component with variants
+ */
+interface Props {
+  /** Visual style variant. 'primary' for main CTAs (white bg), 'secondary' for purple bg, 'outline' for ghost buttons. Defaults to 'primary'. */
+  variant?: "primary" | "secondary" | "outline";
+  /** Size preset. 'sm' for compact buttons, 'md' for standard size, 'lg' for prominent CTAs. Defaults to 'md'. */
+  size?: "sm" | "md" | "lg";
+  /** If provided, renders as an anchor tag with this URL. Otherwise renders as a button. */
+  href?: string;
+  /** Button type attribute. Only applies when href is not provided. Defaults to 'button'. */
+  type?: "button" | "submit" | "reset";
+  /** Additional CSS classes to apply to the button. */
+  className?: string;
+  /** If true, button takes full width of its container. Defaults to false. */
+  fullWidth?: boolean;
+  /** Accessible label for screen readers. */
+  ariaLabel?: string;
+}
+
+const {
+  variant = "primary",
+  size = "md",
+  href,
+  type = "button",
+  className = "",
+  fullWidth = false,
+  ariaLabel,
+} = Astro.props;
+
+const baseClasses =
+  "inline-block rounded-full font-medium transition-all duration-300 text-center";
+
+const variantClasses = {
+  primary:
+    "bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] hover:opacity-90 shadow-md hover:shadow-lg",
+  secondary:
+    "bg-[var(--button-secondary-bg)] text-[var(--button-secondary-text)] hover:bg-[var(--color-primary)] shadow-md hover:shadow-lg",
+  outline:
+    "border-2 border-current text-[var(--link-color)] hover:bg-[var(--link-color)] hover:text-white transition-colors shadow-md hover:shadow-lg",
+};
+
+const sizeClasses = {
+  sm: "px-4 py-2 text-sm",
+  md: "px-8 py-3",
+  lg: "px-10 py-4 text-lg",
+};
+
+const widthClass = fullWidth ? "w-full" : "";
+
+const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${widthClass} ${className}`;
+
+const Element = href ? "a" : "button";
+const elementProps = href ? { href } : { type };
+---
+
+<Element class={classes} aria-label={ariaLabel} {...elementProps}>
+  <slot />
+</Element>

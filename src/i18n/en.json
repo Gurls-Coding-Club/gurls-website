@@ -1,0 +1,158 @@
+{
+  "nav": {
+    "about": "About Us",
+    "ourStory": "Our Story",
+    "ourMission": "Our Mission",
+    "team": "Team",
+    "events": "Events",
+    "blog": "Blog",
+    "news": "News",
+    "faq": "FAQ",
+    "getInvolved": "Get Involved",
+    "contact": "Contact",
+    "joinUs": "Join Us",
+    "volunteer": "Volunteer",
+    "sponsor": "Become a Sponsor",
+    "donate": "Donate"
+  },
+  "hero": {
+    "title": "Coding Club for FLINTA* in Vienna",
+    "learnMore": "Learn More",
+    "joinUs": "Join Us"
+  },
+  "about": {
+    "title": "Meet G:URL*s",
+    "description": "We're a coding club for the FLINTA* community, open to anyone interested in learning or improving their programming skills. Whether you're just starting out or already experienced, you'll find a supportive space to connect, ask questions, and grow at your own pace!"
+  },
+  "standFor": {
+    "title": "What We Stand For",
+    "subtitle": "The name G:URL*s reflects what matters to us:",
+    "growing": {
+      "title": "Growing",
+      "description": "Supporting personal and professional development"
+    },
+    "uniting": {
+      "title": "Uniting",
+      "description": "Creating an empowering, inclusive community"
+    },
+    "redefining": {
+      "title": "Redefining",
+      "description": "Challenging norms and reshaping tech culture"
+    },
+    "learning": {
+      "title": "Learning",
+      "description": "Embracing curiosity, discovery, and skill-building"
+    },
+    "solving": {
+      "title": "Solving",
+      "description": "Using code to make impact and tackle challenges together"
+    },
+    "ourMission": "Our Mission",
+    "gurlsFaces": "G:URL*s Faces"
+  },
+  "whatWeDo": {
+    "title": "What We Do",
+    "description": "We host biweekly events in English that range from beginner-friendly workshops, practical coding sessions, and tech talks to social events and co-working evenings. Some events focus on learning new tools or building projects, while others are simply about connecting with others in tech.",
+    "footer": "You're welcome to join as often as you like, no need to prep or commit to anything long-term!"
+  },
+  "whoCanJoin": {
+    "title": "Who Can Join",
+    "description": "If you identify as FLINTA* and have an interest in tech, you're welcome to join, no matter your background, experience, or education. You don't need to be an expert, just curious and open to learning. We're a space for beginners, career changers, hobbyists, and anyone who wants to explore tech in a supportive environment.",
+    "flintaExplanation": "FLINTA* stands for Female, Lesbian, Intersex, Non-binary, Trans, Agender, and other non-binary gender identities."
+  },
+  "upcomingEvents": {
+    "title": "Upcoming Events",
+    "subtitle": "Ready to code, connect, and collaborate? Check out our upcoming workshops, meetups, and community sessions:",
+    "calendar": "Event Calendar",
+    "viewAll": "View All"
+  },
+  "getInvolvedSection": {
+    "title": "This Space Is Yours Too!",
+    "subtitle": "Code, Connect, Create",
+    "cta": "Get Involved"
+  },
+  "footer": {
+    "stayInTouch": "Stay In Touch",
+    "address": "G:URL*s Coding Club\nKreativstraße 12,\n1150 Vienna, Austria",
+    "getInvolved": "Get Involved",
+    "supportInitiative": "Support Our Initiative",
+    "sponsors": "Many Thanks to Our Sponsors",
+    "photoCredits": "Photo Credits",
+    "photoCreditsName": "TODO: Add actual photographer name",
+    "bankingInfo": {
+      "accountHolder": "Account Holder",
+      "reference": "Reference: Donation G:URL*s"
+    },
+    "copyright": "Copyright G:URL*s Coding Club 2025",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "termsOfUse": "Terms of Use"
+  },
+  "pages": {
+    "home": {
+      "title": "G:URL*s - Coding Club for FLINTA* in Vienna",
+      "description": "We're a coding club for the FLINTA* community, open to anyone interested in learning or improving their programming skills."
+    },
+    "blog": {
+      "title": "Blog | G:URL*s Coding Club",
+      "description": "Read the latest news, tutorials, and stories from the G:URL*s community.",
+      "heroTitle": "Our Blog",
+      "heroSubtitle": "Stories, insights, and updates from the G:URL*s community",
+      "noPosts": "No blog posts yet. Check back soon for updates!",
+      "readMore": "Read More",
+      "newsletterTitle": "Stay Updated",
+      "newsletterText": "Subscribe to our newsletter for the latest posts, event announcements, and community news.",
+      "emailPlaceholder": "your.email@example.com",
+      "subscribe": "Subscribe"
+    },
+    "contact": {
+      "title": "Contact Us | G:URL*s Coding Club",
+      "description": "Get in touch with G:URL*s Coding Club. Send us a message, ask questions, or share your ideas.",
+      "heroTitle": "Get In Touch",
+      "heroSubtitle": "Have a question, idea, or just want to say hello? We'd love to hear from you!",
+      "sectionTitle": "Let's Connect",
+      "sectionText": "Whether you want to join our community, sponsor an event, volunteer, or just chat about code, we're here for you.",
+      "emailLabel": "Email",
+      "locationLabel": "Location",
+      "locationText": "Vienna, Austria",
+      "followLabel": "Follow Us",
+      "formTitle": "Send Us a Message",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailFieldLabel": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "Select a subject",
+      "subjectOptions": {
+        "join": "I want to join",
+        "volunteer": "I want to volunteer",
+        "sponsor": "Sponsorship inquiry",
+        "collab": "Collaboration",
+        "feedback": "Feedback",
+        "other": "Other"
+      },
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell us how we can help...",
+      "sendButton": "Send Message",
+      "sendingButton": "Sending...",
+      "successMessage": "Thank you! Your message has been sent successfully. We'll get back to you soon!",
+      "errorMessage": "Oops! Something went wrong. Please try again or email us directly."
+    },
+    "blogPost": {
+      "home": "Home",
+      "blog": "Blog",
+      "backToBlog": "Back to Blog",
+      "sharePost": "Share this post",
+      "by": "By"
+    },
+    "notFound": {
+      "title": "404 - Page Not Found | G:URL*s Coding Club",
+      "description": "The page you're looking for doesn't exist.",
+      "number": "404",
+      "heading": "Page Not Found",
+      "message": "Oops! The page you're looking for doesn't exist. It might have been moved or deleted.",
+      "homeButton": "Go to Homepage",
+      "contactButton": "Contact Us"
+    }
+  }
+}

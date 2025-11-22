@@ -1,0 +1,32 @@
+---
+/**
+ * Reusable Section component with consistent styling and spacing
+ */
+interface Props {
+  /** HTML id attribute for anchor linking and navigation. */
+  id?: string;
+  /** Background color preset. 'primary' for main bg, 'secondary' for alternate sections, 'cream' for light sections, 'accent' for purple header. Defaults to 'secondary'. */
+  bgColor?: 'primary' | 'secondary' | 'cream' | 'accent';
+  /** Additional CSS classes to apply to the section element. */
+  className?: string;
+  /** Additional CSS classes to apply to the inner container div. */
+  containerClass?: string;
+}
+
+const { id, bgColor = 'secondary', className = '', containerClass = '' } = Astro.props;
+
+const bgColorMap = {
+  primary: 'bg-[var(--bg-primary)]',
+  secondary: 'bg-[var(--bg-secondary)]',
+  cream: 'bg-[var(--color-cream)]',
+  accent: 'bg-[var(--bg-accent)]',
+};
+
+const bgClass = bgColorMap[bgColor];
+---
+
+<section id={id} class={`py-20 ${bgClass} ${className}`}>
+  <div class={`container mx-auto px-4 ${containerClass}`}>
+    <slot />
+  </div>
+</section>

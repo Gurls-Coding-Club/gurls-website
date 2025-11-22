@@ -1,0 +1,153 @@
+---
+/**
+ * SEO Component - Comprehensive meta tags and structured data
+ * WCAG compliant and optimized for search engines and social media
+ */
+
+interface Props {
+  /** Page title - will be appended with site name */
+  title: string;
+  /** Meta description for search results (150-160 chars recommended) */
+  description: string;
+  /** Canonical URL for this page */
+  canonical?: string;
+  /** Open Graph image URL (1200x630px recommended) */
+  image?: string;
+  /** Page type: website, article, etc. */
+  type?: 'website' | 'article';
+  /** Article published date (ISO format) */
+  publishedTime?: string;
+  /** Article modified date (ISO format) */
+  modifiedTime?: string;
+  /** Article author name */
+  author?: string;
+  /** Article tags */
+  tags?: string[];
+  /** Language code (en, de) */
+  lang?: 'en' | 'de';
+  /** Disable search engine indexing */
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  image = '/og-image.jpg',
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  author,
+  tags = [],
+  lang = 'en',
+  noindex = false,
+} = Astro.props;
+
+const siteName = 'G:URL*s Coding Club';
+const fullTitle = `${title} | ${siteName}`;
+const siteUrl = Astro.site?.origin || 'https://gurls.club';
+const canonicalURL = canonical || new URL(Astro.url.pathname, siteUrl).toString();
+const imageURL = image.startsWith('http') ? image : new URL(image, siteUrl).toString();
+
+// Twitter card type based on content
+const twitterCard = type === 'article' ? 'summary_large_image' : 'summary_large_image';
+---
+
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+<meta name="keywords" content="coding club, FLINTA, Vienna, programming, tech community, women in tech, diversity in tech, coding workshops" />
+<link rel="canonical" href={canonicalURL} />
+<meta name="language" content={lang} />
+
+<!-- Robots -->
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageURL} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content={lang === 'de' ? 'de_AT' : 'en_US'} />
+
+{type === 'article' && publishedTime && (
+  <meta property="article:published_time" content={publishedTime} />
+)}
+{type === 'article' && modifiedTime && (
+  <meta property="article:modified_time" content={modifiedTime} />
+)}
+{type === 'article' && author && (
+  <meta property="article:author" content={author} />
+)}
+{type === 'article' && tags.map((tag) => (
+  <meta property="article:tag" content={tag} />
+))}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content={twitterCard} />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageURL} />
+<meta name="twitter:creator" content="@gurls_club" />
+
+<!-- Additional SEO -->
+<meta name="theme-color" content="#5759a6" />
+<meta name="color-scheme" content="light dark" />
+
+<!-- Structured Data - Organization -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "G:URL*s Coding Club",
+  "url": siteUrl,
+  "logo": `${siteUrl}/logo.png`,
+  "description": "Coding club for FLINTA* individuals in Vienna, Austria",
+  "foundingDate": "2024",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Vienna",
+    "addressCountry": "AT"
+  },
+  "sameAs": [
+    "https://instagram.com/gurls.club",
+    "https://linkedin.com/company/gurls-club",
+    "https://discord.gg/gurls"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@gurls.club",
+    "contactType": "General Inquiries"
+  }
+})} />
+
+{type === 'article' && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": description,
+    "image": imageURL,
+    "datePublished": publishedTime,
+    "dateModified": modifiedTime || publishedTime,
+    "author": {
+      "@type": author === "G:URL*s Team" ? "Organization" : "Person",
+      "name": author || "G:URL*s Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": siteName,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteUrl}/logo.png`
+      }
+    },
+    "keywords": tags.join(', '),
+    "url": canonicalURL
+  })} />
+)}

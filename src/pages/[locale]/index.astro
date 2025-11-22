@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import WhatWeStandFor from '../../components/WhatWeStandFor.astro';
+import EventsCalendar from '../../components/EventsCalendar.astro';
+import GetInvolvedCTA from '../../components/GetInvolvedCTA.astro';
+import Footer from '../../components/Footer.astro';
+import { languages, useTranslations } from '../../i18n/utils';
+import type { Language } from '../../i18n/utils';
+
+export async function getStaticPaths() {
+  return languages.map((locale) => ({
+    params: { locale },
+  }));
+}
+
+const { locale } = Astro.params as { locale: Language };
+const t = useTranslations(locale);
+---
+
+<BaseLayout title={t('pages.home.title')} description={t('pages.home.description')}>
+  <Header />
+  <main>
+    <Hero />
+    <AboutSection />
+    <WhatWeStandFor />
+    <EventsCalendar />
+    <GetInvolvedCTA />
+  </main>
+  <Footer />
+</BaseLayout>

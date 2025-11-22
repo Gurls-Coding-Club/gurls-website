@@ -1,0 +1,136 @@
+---
+import {
+  getLangFromUrl,
+  useTranslations,
+  getLocalizedPath,
+} from "../i18n/utils";
+import LanguageSelector from "./LanguageSelector.astro";
+import NavigationItem from "./NavigationItem.astro";
+import NavigationDropdown from "./NavigationDropdown.astro";
+import { navigationItems, getMobileNavigationItems } from "./navigationConfig";
+import type { DropdownItem } from "./NavigationDropdown.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Get mobile navigation items
+const mobileNavItems = getMobileNavigationItems();
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 bg-[var(--bg-accent)] text-white shadow-md"
+>
+  <nav
+    class="container mx-auto px-4 py-4 flex items-center justify-between"
+    aria-label="Main navigation"
+  >
+    <!-- Logo -->
+    <a
+      href={getLocalizedPath(lang, "/")}
+      class="text-2xl font-bold tracking-tight"
+      aria-label="G:URL*s home"
+    >
+      G:URL*s
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden lg:flex items-center gap-8">
+      {
+        navigationItems.map((item) => {
+          if (item.type === "link") {
+            return (
+              <NavigationItem
+                href={getLocalizedPath(lang, item.href)}
+                label={t(item.labelKey)}
+              />
+            );
+          } else if (item.type === "dropdown") {
+            // Transform dropdown items to use localized paths and translated labels
+            const dropdownItems: DropdownItem[] = item.items.map(
+              (dropdownItem) => ({
+                href: getLocalizedPath(lang, dropdownItem.href),
+                label: t(dropdownItem.label),
+              })
+            );
+
+            return (
+              <NavigationDropdown
+                label={t(item.labelKey)}
+                items={dropdownItems}
+              />
+            );
+          }
+        })
+      }
+    </div>
+
+    <!-- Right side: Language, Join Us -->
+    <div class="flex items-center gap-4">
+      <LanguageSelector />
+      <a
+        href={getLocalizedPath(lang, "/join")}
+        class="hidden lg:block bg-white text-[var(--color-primary)] px-6 py-2 rounded-full font-medium hover:bg-[var(--color-cream)] transition-colors"
+      >
+        {t("nav.joinUs")}
+      </a>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden p-2"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden hidden bg-[var(--color-primary-dark)] px-4 py-4"
+  >
+    <div class="flex flex-col gap-4">
+      {
+        mobileNavItems.map((item) => (
+          <a
+            href={getLocalizedPath(lang, item.href)}
+            class="hover:text-[var(--color-accent)] transition-colors"
+          >
+            {t(item.label)}
+          </a>
+        ))
+      }
+      <a
+        href={getLocalizedPath(lang, "/join")}
+        class="bg-white text-[var(--color-primary)] px-6 py-2 rounded-full font-medium hover:bg-[var(--color-cream)] transition-colors text-center"
+      >
+        {t("nav.joinUs")}
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuButton?.addEventListener("click", () => {
+    const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-expanded", String(!isExpanded));
+    mobileMenu?.classList.toggle("hidden");
+  });
+</script>

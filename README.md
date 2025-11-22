@@ -1,43 +1,127 @@
-# Astro Starter Kit: Minimal
+# G:URL*s Website
 
-```sh
-npm create astro@latest -- --template minimal
+The official website for G:URL*s Coding Club - A FLINTA* coding community in Vienna.
+
+## Features
+
+- 🌍 **Bilingual** - Full English and German support
+- 🎨 **Modern Design** - Responsive, accessible, with light/dark mode
+- 📝 **Content Management** - Markdown-based blog posts and events
+- ⚡ **Fast** - Built with Astro for optimal performance
+- 🎯 **Type-Safe** - Full TypeScript support
+
+## Tech Stack
+
+- **Framework:** [Astro](https://astro.build) v5
+- **Styling:** [Tailwind CSS](https://tailwindcss.com) v4
+- **Language:** TypeScript (strict mode)
+- **Deployment:** Ready for Vercel, Netlify, or any static host
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm
+
+### Installation
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Visit `http://localhost:4321` to see the site.
 
-## 🚀 Project Structure
+### Development Commands
 
-Inside of your Astro project, you'll see the following folders and files:
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start dev server at `localhost:4321` |
+| `npm run build` | Build production site to `./dist/` |
+| `npm run preview` | Preview production build locally |
+| `npx astro check` | Type-check the project |
 
-```text
+## Project Structure
+
+```
 /
-├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/      # Reusable Astro components
+│   ├── layouts/         # Page layouts
+│   ├── pages/           # File-based routing
+│   │   ├── index.astro  # English homepage
+│   │   └── de/          # German pages
+│   ├── content/         # Markdown content
+│   │   ├── blog/        # Blog posts (en/de)
+│   │   └── events/      # Events (en/de)
+│   ├── i18n/            # Translation files
+│   └── styles/          # Global styles
+└── public/              # Static assets
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Adding Content
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Blog Posts
 
-Any static assets, like images, can be placed in the `public/` directory.
+Create a new markdown file in `src/content/blog/en/` (or `de/` for German):
 
-## 🧞 Commands
+```markdown
+---
+title: "Your Post Title"
+description: "Brief description"
+author: "Author Name"
+date: 2025-01-20
+tags: ["tag1", "tag2"]
+---
 
-All commands are run from the root of the project, from a terminal:
+Your content here...
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Events
 
-## 👀 Want to learn more?
+Create a new markdown file in `src/content/events/en/`:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```markdown
+---
+title: "Event Title"
+description: "Event description"
+date: 2025-03-15
+eventType: "workshop"
+location: "Vienna"
+registrationUrl: "https://..."
+---
+
+Event details...
+```
+
+## Internationalization
+
+- **Default language:** English (root paths: `/`, `/about`, etc.)
+- **German:** Prefixed with `/de` (`/de`, `/de/about`, etc.)
+- **Adding translations:** Edit `src/i18n/en.json` and `src/i18n/de.json`
+
+## Deployment
+
+### Vercel / Netlify
+
+1. Push code to GitHub
+2. Connect repository to Vercel/Netlify
+3. Deploy (zero configuration needed)
+
+### Manual Build
+
+```bash
+npm run build
+# Upload ./dist/ folder to your host
+```
+
+## Contributing
+
+See [CLAUDE.md](./CLAUDE.md) for detailed architecture and development guidelines.
+
+## License
+
+© 2025 G:URL*s Coding Club
