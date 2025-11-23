@@ -9,6 +9,7 @@ import NavigationItem from "./NavigationItem.astro";
 import NavigationDropdown from "./NavigationDropdown.astro";
 import { navigationItems, getMobileNavigationItems } from "./navigationConfig";
 import type { DropdownItem } from "./NavigationDropdown.astro";
+import { Icon } from "astro-icon/components";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -79,18 +80,7 @@ const mobileNavItems = getMobileNavigationItems();
         aria-label="Toggle menu"
         aria-expanded="false"
       >
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
+        <Icon name="lucide:menu" class="w-6 h-6" />
       </button>
     </div>
   </nav>

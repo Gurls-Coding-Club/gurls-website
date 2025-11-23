@@ -6,6 +6,7 @@ import Footer from "../../components/Footer.astro";
 import Section from "../../components/Section.astro";
 import { languages, useTranslations, getLocalizedPath } from "../../i18n/utils";
 import type { Language } from "../../i18n/utils";
+import { Icon } from "astro-icon/components";
 
 export async function getStaticPaths() {
   return languages.map((locale) => ({
@@ -122,19 +123,10 @@ const blogPosts = (
                         class="mt-6 inline-flex items-center gap-2 text-primary hover:text-blue-light font-medium transition-colors group"
                       >
                         {t("pages.blog.readMore")}
-                        <svg
+                        <Icon
+                          name="lucide:chevron-right"
                           class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
+                        />
                       </a>
                     </div>
                   </article>

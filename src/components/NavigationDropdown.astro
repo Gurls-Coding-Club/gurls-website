@@ -5,6 +5,8 @@
  * This component renders a dropdown navigation menu with keyboard navigation support,
  * ARIA attributes, and proper focus management.
  */
+import { Icon } from "astro-icon/components";
+
 export interface DropdownItem {
   /** The URL to link to */
   href: string;
@@ -31,19 +33,7 @@ const { label, items, className = "" } = Astro.props;
     aria-expanded="false"
   >
     {label}
-    <svg
-      class="w-4 h-4"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M19 9l-7 7-7-7"></path>
-    </svg>
+    <Icon name="lucide:chevron-down" class="w-4 h-4" aria-hidden="true" />
   </button>
   <div
     class="absolute top-full left-0 mt-2 w-48 bg-white text-primary rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
