@@ -153,6 +153,15 @@
       "message": "Ups! Die Seite, die du suchst, existiert nicht. Sie wurde möglicherweise verschoben oder gelöscht.",
       "homeButton": "Zur Startseite",
       "contactButton": "Kontaktiere Uns"
+    },
+    "faq": {
+      "title": "FAQ | G:URL*s Coding Club",
+      "description": "Häufig gestellte Fragen über G:URL*s Coding Club. Erfahre mehr über unsere Events, Mitgliedschaft und wie du mitmachen kannst.",
+      "heroTitle": "Häufig Gestellte Fragen",
+      "heroSubtitle": "Finde Antworten auf häufige Fragen über unseren Coding Club, Events und Community",
+      "ctaTitle": "Noch Fragen?",
+      "ctaText": "Kannst du nicht finden, wonach du suchst? Kontaktiere uns gerne direkt.",
+      "ctaButton": "Kontaktiere Uns"
     }
   }
 }

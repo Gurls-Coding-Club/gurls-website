@@ -153,6 +153,15 @@
       "message": "Oops! The page you're looking for doesn't exist. It might have been moved or deleted.",
       "homeButton": "Go to Homepage",
       "contactButton": "Contact Us"
+    },
+    "faq": {
+      "title": "FAQ | G:URL*s Coding Club",
+      "description": "Frequently asked questions about G:URL*s Coding Club. Learn about our events, membership, and how to get involved.",
+      "heroTitle": "Frequently Asked Questions",
+      "heroSubtitle": "Find answers to common questions about our coding club, events, and community",
+      "ctaTitle": "Still Have Questions?",
+      "ctaText": "Can't find what you're looking for? Feel free to reach out to us directly.",
+      "ctaButton": "Contact Us"
     }
   }
 }
