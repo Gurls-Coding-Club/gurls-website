@@ -5,6 +5,7 @@ import {
   useTranslations,
   getLocalizedPath,
 } from "../i18n/utils";
+import Button from "./Button.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -35,18 +36,17 @@ const t = useTranslations(lang);
     </h1>
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <a
-        href="#about"
-        class="px-8 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-[var(--color-primary)] transition-all duration-300 min-w-[160px]"
-      >
-        {t("hero.learnMore")}
-      </a>
-      <a
-        href={getLocalizedPath(lang, "/join")}
-        class="px-8 py-3 bg-white text-[var(--color-primary)] rounded-full font-medium hover:bg-[var(--color-cream)] transition-all duration-300 min-w-[160px]"
-      >
-        {t("hero.joinUs")}
-      </a>
+      <Button variant="secondary" size="lg">
+        <a href="#about">
+          {t("hero.learnMore")}
+        </a>
+      </Button>
+
+      <Button variant="primary" size="lg">
+        <a href={getLocalizedPath(lang, "/join")}>
+          {t("hero.joinUs")}
+        </a>
+      </Button>
     </div>
   </div>
 

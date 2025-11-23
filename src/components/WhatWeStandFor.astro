@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { Icon } from "astro-icon/components";
+import Button from "./Button.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -57,16 +58,16 @@ const pillars = [
     </div>
 
     <div class="flex justify-center gap-4 mt-12">
-      <button
-        class="px-6 py-2 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-primary transition-colors"
-      >
-        {t("standFor.ourMission")}
-      </button>
-      <button
-        class="px-6 py-2 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-primary transition-colors"
-      >
-        {t("standFor.gurlsFaces")}
-      </button>
+      <Button variant="outline">
+        <a href={`/${lang}/our-mission`}>
+          {t("standFor.ourMission")}
+        </a>
+      </Button>
+      <Button variant="outline">
+        <a href={`/${lang}/gurls-faces`}>
+          {t("standFor.gurlsFaces")}
+        </a>
+      </Button>
     </div>
   </div>
 </section>

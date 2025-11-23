@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import Section from "../../components/Section.astro";
+import Link from "../../components/Link.astro";
 import { languages, useTranslations } from "../../i18n/utils";
 import type { Language } from "../../i18n/utils";
 import { Icon } from "astro-icon/components";
@@ -92,33 +93,21 @@ const t = useTranslations(locale);
                   <h3 class="font-semibold text-lg mb-1">
                     {t("pages.contact.followLabel")}
                   </h3>
-                  <div class="flex gap-3">
-                    <a
-                      href="https://instagram.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-primary hover:text-blue-light transition-colors"
-                    >
+                  <div class="flex gap-2">
+                    <Link href="https://instagram.com" icon="lucide:instagram">
                       Instagram
-                    </a>
-                    <span>•</span>
-                    <a
+                      <span>•</span>
+                    </Link>
+                    <Link
                       href="https://discord.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-primary hover:text-blue-light transition-colors"
+                      icon="simple-icons:discord"
                     >
                       Discord
-                    </a>
-                    <span>•</span>
-                    <a
-                      href="https://linkedin.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-primary hover:text-blue-light transition-colors"
-                    >
+                      <span>•</span>
+                    </Link>
+                    <Link href="https://linkedin.com" icon="lucide:linkedin">
                       LinkedIn
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

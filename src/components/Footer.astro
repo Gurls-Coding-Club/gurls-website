@@ -4,6 +4,7 @@ import {
   useTranslations,
   getLocalizedPath,
 } from "../i18n/utils";
+import Link from "./Link.astro";
 import { Icon } from "astro-icon/components";
 
 const lang = getLangFromUrl(Astro.url);
@@ -19,34 +20,40 @@ const t = useTranslations(lang);
         <div class="mb-4">
           <p class="whitespace-pre-line opacity-90">{t("footer.address")}</p>
         </div>
-        <div class="flex gap-4 mt-6">
-          <a
+        <div class="flex gap-3 mt-6">
+          <Link
+            variant="secondary"
             href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:text-blue-light transition-colors"
-            aria-label="Instagram"
+            className="w-5 h-5"
           >
-            <Icon name="lucide:instagram" class="w-6 h-6" />
-          </a>
-          <a
+            <Icon
+              aria-label="Instagram"
+              name="lucide:instagram"
+              class="w-6 h-6"
+            />
+          </Link>
+          <Link
+            variant="secondary"
             href="https://discord.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:text-blue-light transition-colors"
-            aria-label="Discord"
+            className="w-5 h-5"
           >
-            <Icon name="simple-icons:discord" class="w-6 h-6" />
-          </a>
-          <a
+            <Icon
+              aria-label="Discord"
+              name="simple-icons:discord"
+              class="w-6 h-6"
+            />
+          </Link>
+          <Link
+            variant="secondary"
             href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:text-blue-light transition-colors"
-            aria-label="LinkedIn"
+            className="w-5 h-5"
           >
-            <Icon name="lucide:linkedin" class="w-6 h-6" />
-          </a>
+            <Icon
+              aria-label="LinkedIn"
+              name="lucide:linkedin"
+              class="w-6 h-6"
+            />
+          </Link>
         </div>
       </div>
 

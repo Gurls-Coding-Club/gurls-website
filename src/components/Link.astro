@@ -1,0 +1,47 @@
+---
+/**
+ * ExternalLink component - A reusable external link with icon and text
+ *
+ * This component renders an external link with an optional icon, text label,
+ * and consistent styling for hover states and accessibility.
+ */
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  /** The URL to link to */
+  href: string;
+  /** Optional icon name from Lucide or other icon sets */
+  icon?: string;
+  /** Text label for the link */
+  variant?: "primary" | "secondary";
+  /** Additional CSS classes */
+  className?: string;
+  /** Icon size (default: "w-4 h-4") */
+  iconSize?: string;
+  /** Whether to open in new tab (default: true) */
+  newTab?: boolean;
+  /** Layout direction (default: "horizontal") */
+  direction?: "horizontal" | "vertical";
+}
+
+const {
+  href,
+  variant = "primary",
+  className = "",
+  newTab = true,
+} = Astro.props;
+
+const variantClasses = {
+  primary: "text-primary ",
+  secondary: "text-secondary ",
+};
+---
+
+<a
+  href={href}
+  target={newTab ? "_blank" : undefined}
+  rel={newTab ? "noopener noreferrer" : undefined}
+  class={`${variantClasses[variant]} hover:text-blue-light transition-colors ${className}`}
+>
+  <slot />
+</a>

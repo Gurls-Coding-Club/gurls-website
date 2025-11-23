@@ -34,17 +34,17 @@ const baseClasses =
 
 const variantClasses = {
   primary:
-    "bg-primary text-primary-text hover:opacity-90 shadow-md hover:shadow-lg",
+    "bg-primary text-primary-text border-4 border-primary hover:border-secondary",
   secondary:
-    "bg-secondary text-secondary-text hover:bg-primary shadow-md hover:shadow-lg",
+    "bg-secondary text-secondary-text border-4 border-secondary hover:border-accent",
   outline:
-    "border-2 border-current text-primary hover:bg-secondary hover:text-white transition-colors shadow-md hover:shadow-lg",
+    "border-2 border-current text-secondary hover:bg-secondary hover:text-primary transition-colors ",
 };
 
 const sizeClasses = {
-  sm: "px-4 py-2 text-sm",
-  md: "px-8 py-3",
-  lg: "px-10 py-4 text-lg",
+  sm: "px-6 py-2 text-sm",
+  md: "px-6 py-2",
+  lg: "px-8 py-4 text-lg",
 };
 
 const widthClass = fullWidth ? "w-full" : "";
