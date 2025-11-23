@@ -18,7 +18,7 @@ const sortedLanguages = languages.map((locale) => {
 
 <div class="relative group">
   <button
-    class="flex items-center gap-1 p-2 rounded-lg hover:bg-[var(--color-primary-dark)] transition-colors text-white"
+    class="flex items-center gap-1 p-2 rounded-lg hover:bg-primary transition-colors text-primary-text"
     aria-label="Select language"
   >
     <svg
@@ -51,7 +51,7 @@ const sortedLanguages = languages.map((locale) => {
     </svg>
   </button>
   <div
-    class="absolute top-full right-0 mt-2 w-32 bg-white text-[var(--text-primary)] rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+    class="absolute top-full right-0 mt-2 w-32 bg-white text-primary rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
     role="menu"
   >
     {
@@ -61,10 +61,10 @@ const sortedLanguages = languages.map((locale) => {
         const isActive = lang === language.code;
 
         const classes = [
-          "block px-4 py-2 hover:bg-gray-100 hover:text-[var(--text-primary)] transition-colors",
+          "block px-4 py-2 hover:bg-gray-100 hover:text-primary transition-colors",
           isFirst && "rounded-t-lg",
           isLast && "rounded-b-lg",
-          isActive && "bg-[var(--color-cream)] font-bold",
+          isActive && "bg-cream font-bold",
         ]
           .filter(Boolean)
           .join(" ");

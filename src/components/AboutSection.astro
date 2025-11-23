@@ -1,7 +1,7 @@
 ---
-import { Image } from 'astro:assets';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import Section from './Section.astro';
+import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Section from "./Section.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -10,7 +10,7 @@ const t = useTranslations(lang);
 <Section id="about" bgColor="cream">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-4xl md:text-5xl font-bold mb-8">
-      {t('about.title')}
+      {t("about.title")}
     </h2>
 
     <div class="mb-8">
@@ -25,8 +25,8 @@ const t = useTranslations(lang);
       />
     </div>
 
-    <p class="text-lg leading-relaxed text-[var(--text-secondary)]">
-      {t('about.description')}
+    <p class="text-lg leading-relaxed text-primary">
+      {t("about.description")}
     </p>
   </div>
 </Section>
@@ -35,15 +35,15 @@ const t = useTranslations(lang);
 <Section id="what-we-do" bgColor="secondary">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-4xl md:text-5xl font-bold mb-6">
-      {t('whatWeDo.title')}
+      {t("whatWeDo.title")}
     </h2>
 
-    <p class="text-lg leading-relaxed text-[var(--text-secondary)] mb-6">
-      {t('whatWeDo.description')}
+    <p class="text-lg leading-relaxed text-primary mb-6">
+      {t("whatWeDo.description")}
     </p>
 
-    <p class="text-lg font-medium text-[var(--text-primary)]">
-      {t('whatWeDo.footer')}
+    <p class="text-lg font-medium text-primary">
+      {t("whatWeDo.footer")}
     </p>
   </div>
 </Section>
@@ -52,15 +52,15 @@ const t = useTranslations(lang);
 <Section id="who-can-join" bgColor="cream">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-4xl md:text-5xl font-bold mb-6">
-      {t('whoCanJoin.title')}
+      {t("whoCanJoin.title")}
     </h2>
 
-    <p class="text-lg leading-relaxed text-[var(--text-secondary)] mb-6">
-      {t('whoCanJoin.description')}
+    <p class="text-lg leading-relaxed text-primary mb-6">
+      {t("whoCanJoin.description")}
     </p>
 
-    <p class="text-md font-medium text-[var(--color-primary)] italic">
-      {t('whoCanJoin.flintaExplanation')}
+    <p class="text-md font-medium text-primary italic">
+      {t("whoCanJoin.flintaExplanation")}
     </p>
   </div>
 </Section>

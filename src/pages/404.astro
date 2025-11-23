@@ -17,9 +17,9 @@ const t = useTranslations(lang);
 
   <main class="pt-20">
     <Section bgColor="primary" className="py-32">
-      <div class="max-w-3xl mx-auto text-center">
+      <div class="max-w-3xl mx-auto text-center text-secondary">
         <!-- 404 Number -->
-        <h1 class="text-4xl font-bold text-[var(--color-accent)] mb-6">
+        <h1 class="text-4xl font-bold mb-6">
           {t("pages.notFound.number")}
         </h1>
 
@@ -28,7 +28,7 @@ const t = useTranslations(lang);
           {t("pages.notFound.heading")}
         </h2>
 
-        <p class="text-xl text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
           {t("pages.notFound.message")}
         </p>
 
@@ -36,13 +36,13 @@ const t = useTranslations(lang);
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href={`/${lang}/`}
-            class="px-8 py-3 bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] rounded-full font-medium hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-300"
+            class="px-8 py-3 bg-secondary text-primary rounded-full font-medium hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-300"
           >
             {t("pages.notFound.homeButton")}
           </a>
           <a
             href={`/${lang}/contact`}
-            class="px-8 py-3 bg-white text-[var(--color-primary)] rounded-full font-medium hover:bg-[var(--color-cream)] shadow-md hover:shadow-lg transition-all duration-300"
+            class="px-8 py-3 bg-white text-primary rounded-full font-medium hover:bg-cream shadow-md hover:shadow-lg transition-all duration-300"
           >
             {t("pages.notFound.contactButton")}
           </a>

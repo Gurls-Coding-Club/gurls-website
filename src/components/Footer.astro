@@ -9,7 +9,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer class="bg-[var(--color-primary)] text-white pt-16 pb-8">
+<footer class="bg-primary text-primary-text pt-16 pb-8">
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
       <!-- Contact Info -->
@@ -23,7 +23,7 @@ const t = useTranslations(lang);
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:text-[var(--color-accent)] transition-colors"
+            class="hover:text-blue-light transition-colors"
             aria-label="Instagram"
           >
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -36,7 +36,7 @@ const t = useTranslations(lang);
             href="https://discord.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:text-[var(--color-accent)] transition-colors"
+            class="hover:text-blue-light transition-colors"
             aria-label="Discord"
           >
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -49,7 +49,7 @@ const t = useTranslations(lang);
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:text-[var(--color-accent)] transition-colors"
+            class="hover:text-blue-light transition-colors"
             aria-label="LinkedIn"
           >
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -67,25 +67,25 @@ const t = useTranslations(lang);
         <nav class="flex flex-col gap-2">
           <a
             href={getLocalizedPath(lang, "/join")}
-            class="opacity-90 hover:opacity-100 hover:text-[var(--color-accent)] transition-colors"
+            class="opacity-90 hover:opacity-100 hover:text-blue-light transition-colors"
           >
             {t("nav.joinUs")}
           </a>
           <a
             href={getLocalizedPath(lang, "/volunteer")}
-            class="opacity-90 hover:opacity-100 hover:text-[var(--color-accent)] transition-colors"
+            class="opacity-90 hover:opacity-100 hover:text-blue-light transition-colors"
           >
             {t("nav.volunteer")}
           </a>
           <a
             href={getLocalizedPath(lang, "/sponsor")}
-            class="opacity-90 hover:opacity-100 hover:text-[var(--color-accent)] transition-colors"
+            class="opacity-90 hover:opacity-100 hover:text-blue-light transition-colors"
           >
             {t("nav.sponsor")}
           </a>
           <a
             href={getLocalizedPath(lang, "/donate")}
-            class="opacity-90 hover:opacity-100 hover:text-[var(--color-accent)] transition-colors"
+            class="opacity-90 hover:opacity-100 hover:text-blue-light transition-colors"
           >
             {t("nav.donate")}
           </a>
@@ -133,28 +133,28 @@ const t = useTranslations(lang);
       <div class="flex flex-wrap justify-center gap-4">
         <a
           href={getLocalizedPath(lang, "/privacy")}
-          class="hover:text-[var(--color-accent)] transition-colors"
+          class="hover:text-blue-light transition-colors"
         >
           {t("footer.privacyPolicy")}
         </a>
         <span>|</span>
         <a
           href={getLocalizedPath(lang, "/cookies")}
-          class="hover:text-[var(--color-accent)] transition-colors"
+          class="hover:text-blue-light transition-colors"
         >
           {t("footer.cookiePolicy")}
         </a>
         <span>|</span>
         <a
           href={getLocalizedPath(lang, "/terms")}
-          class="hover:text-[var(--color-accent)] transition-colors"
+          class="hover:text-blue-light transition-colors"
         >
           {t("footer.termsOfUse")}
         </a>
         <span>|</span>
         <a
           href={getLocalizedPath(lang, "/contact")}
-          class="hover:text-[var(--color-accent)] transition-colors"
+          class="hover:text-blue-light transition-colors"
         >
           {t("nav.contact")}
         </a>

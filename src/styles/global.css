@@ -5,6 +5,9 @@
 
   /* Main Brand Colors */
   --color-primary: #5759a6; /* Primary purple */
+  --color-primary-text: #ffffff; /* White text on primary purple */
+  --color-secondary: #f1e6d1; /* Brand blue */
+  --color-secondary-text: #5759a6; /* White text on brand blue */
   --color-accent: #6466e1; /* Vibrant purple */
   --color-blue: #439bde; /* Brand blue */
   --color-blue-light: #67bee1; /* Light blue */

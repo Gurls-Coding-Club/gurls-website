@@ -68,13 +68,11 @@ const formattedDate = entry.data.date.toLocaleDateString(
       <div class="max-w-4xl mx-auto">
         <!-- Breadcrumbs -->
         <nav class="mb-8" aria-label="Breadcrumb">
-          <ol
-            class="flex items-center gap-2 text-sm text-[var(--text-secondary)]"
-          >
+          <ol class="flex items-center gap-2 text-sm text-secondary">
             <li>
               <a
                 href={getLocalizedPath(locale, "/")}
-                class="hover:text-[var(--link-hover)] transition-colors"
+                class="hover:text-blue-light transition-colors"
                 >{t("pages.blogPost.home")}</a
               >
             </li>
@@ -95,7 +93,7 @@ const formattedDate = entry.data.date.toLocaleDateString(
             <li>
               <a
                 href={getLocalizedPath(locale, "/blog")}
-                class="hover:text-[var(--link-hover)] transition-colors"
+                class="hover:text-blue-light transition-colors"
                 >{t("pages.blogPost.blog")}</a
               >
             </li>
@@ -113,10 +111,7 @@ const formattedDate = entry.data.date.toLocaleDateString(
                   d="M9 5l7 7-7 7"></path>
               </svg>
             </li>
-            <li
-              class="text-[var(--text-primary)] font-medium"
-              aria-current="page"
-            >
+            <li class="text-secondary font-medium" aria-current="page">
               {entry.data.title}
             </li>
           </ol>
@@ -128,7 +123,7 @@ const formattedDate = entry.data.date.toLocaleDateString(
             entry.data.tags && entry.data.tags.length > 0 && (
               <div class="flex flex-wrap gap-2 mb-4">
                 {entry.data.tags.map((tag) => (
-                  <span class="px-3 py-1 text-sm  bg-[var(--bg-accent)] bg-opacity-20 text-[var(--text-on-primary)] rounded-full">
+                  <span class="px-3 py-1 text-sm  bg-accent bg-opacity-20 text-primary-text rounded-full">
                     #{tag}
                   </span>
                 ))}
@@ -136,9 +131,7 @@ const formattedDate = entry.data.date.toLocaleDateString(
             )
           }
 
-          <div
-            class="flex flex-wrap items-center gap-4 text-[var(--text-secondary)]"
-          >
+          <div class="flex flex-wrap items-center gap-4 text-secondary">
             <time datetime={entry.data.date.toISOString()}>
               {formattedDate}
             </time>
@@ -161,7 +154,7 @@ const formattedDate = entry.data.date.toLocaleDateString(
 
         {
           entry.data.description && (
-            <p class="text-xl text-[var(--text-secondary)] leading-relaxed">
+            <p class="text-xl text-secondary leading-relaxed">
               {entry.data.description}
             </p>
           )
@@ -190,7 +183,7 @@ const formattedDate = entry.data.date.toLocaleDateString(
     <Section bgColor="secondary" className={entry.data.image ? "pt-16" : ""}>
       <article class="max-w-3xl mx-auto">
         <div
-          class="prose prose-lg prose-headings:text-[var(--text-primary)] prose-p:text-[var(--text-secondary)] prose-a:text-[var(--link-color)] hover:prose-a:text-[var(--link-hover)] prose-strong:text-[var(--text-primary)] prose-code:text-[var(--color-accent)] prose-code:bg-[var(--color-cream)] prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-gray-50 prose-pre:border prose-pre:border-[var(--border-color)] max-w-none"
+          class="prose prose-lg prose-headings:text-primary prose-p:text-secondary prose-a:text-link-color hover:prose-a:text-link-hover prose-strong:text-primary prose-code:text-color-accent prose-code:bg-color-cream prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-gray-50 prose-pre:border prose-pre:border-border-color max-w-none"
         >
           <Content />
         </div>
@@ -210,7 +203,7 @@ const formattedDate = entry.data.date.toLocaleDateString(
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(entry.data.title)}&url=${encodeURIComponent(Astro.url.href)}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-3 bg-[var(--color-secondary)] text-white rounded-full hover:opacity-90 transition-opacity"
+              class="p-3 bg-secondary text-primary-text rounded-full hover:opacity-90 transition-opacity"
               aria-label="Share on Twitter"
             >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -223,7 +216,7 @@ const formattedDate = entry.data.date.toLocaleDateString(
               href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.href)}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-3 bg-[var(--color-primary)] text-white rounded-full hover:opacity-90 transition-opacity"
+              class="p-3 bg-primary text-primary-text rounded-full hover:opacity-90 transition-opacity"
               aria-label="Share on LinkedIn"
             >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -236,7 +229,7 @@ const formattedDate = entry.data.date.toLocaleDateString(
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.url.href)}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-3 bg-[var(--color-accent)] text-white rounded-full hover:opacity-90 transition-opacity"
+              class="p-3 bg-accent text-white rounded-full hover:opacity-90 transition-opacity"
               aria-label="Share on Facebook"
             >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -252,7 +245,7 @@ const formattedDate = entry.data.date.toLocaleDateString(
         <div class="text-center">
           <a
             href={getLocalizedPath(locale, "/blog")}
-            class="inline-flex items-center gap-2 px-8 py-3 bg-[var(--button-secondary-bg)] text-white rounded-full font-medium hover:bg-[var(--color-primary)] shadow-md hover:shadow-lg transition-all duration-300"
+            class="inline-flex items-center gap-2 px-8 py-3 bg-blue-light text-white rounded-full font-medium hover:bg-color-primary shadow-md hover:shadow-lg transition-all duration-300"
           >
             <svg
               class="w-5 h-5"

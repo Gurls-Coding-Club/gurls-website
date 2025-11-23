@@ -22,7 +22,10 @@ const blogPosts = (
 ).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<BaseLayout title={t('pages.blog.title')} description={t('pages.blog.description')}>
+<BaseLayout
+  title={t("pages.blog.title")}
+  description={t("pages.blog.description")}
+>
   <Header />
 
   <main class="pt-20">
@@ -30,10 +33,10 @@ const blogPosts = (
     <Section bgColor="primary" className="pt-32 pb-16">
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="text-5xl md:text-6xl font-bold mb-6">
-          {t('pages.blog.heroTitle')}
+          {t("pages.blog.heroTitle")}
         </h1>
-        <p class="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
-          {t('pages.blog.heroSubtitle')}
+        <p class="text-xl text-secondary max-w-2xl mx-auto">
+          {t("pages.blog.heroSubtitle")}
         </p>
       </div>
     </Section>
@@ -44,7 +47,7 @@ const blogPosts = (
         {
           blogPosts.length === 0 ? (
             <div class="text-center py-12">
-              <p class="text-xl text-[var(--text-secondary)]">{t('pages.blog.noPosts')}</p>
+              <p class="text-xl text-secondary">{t("pages.blog.noPosts")}</p>
             </div>
           ) : (
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -67,7 +70,7 @@ const blogPosts = (
                 return (
                   <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     {post.data.image && (
-                      <div class="aspect-video bg-[var(--color-gray-light)] overflow-hidden">
+                      <div class="aspect-video bg-gray-light overflow-hidden">
                         <img
                           src={post.data.image}
                           alt={post.data.title}
@@ -78,7 +81,7 @@ const blogPosts = (
 
                     <div class="p-6 flex-1 flex flex-col">
                       <div class="flex-1">
-                        <div class="flex items-center gap-2 text-sm text-[var(--text-secondary)] mb-3">
+                        <div class="flex items-center gap-2 text-sm text-primary mb-3">
                           <time datetime={post.data.date.toISOString()}>
                             {formattedDate}
                           </time>
@@ -90,16 +93,16 @@ const blogPosts = (
                           )}
                         </div>
 
-                        <h2 class="text-2xl font-bold mb-3 text-[var(--text-primary)]">
+                        <h2 class="text-2xl font-bold mb-3 text-primary">
                           <a
                             href={postUrl}
-                            class="hover:text-[var(--link-color)] transition-colors"
+                            class="hover:text-blue-light transition-colors"
                           >
                             {post.data.title}
                           </a>
                         </h2>
 
-                        <p class="text-[var(--text-secondary)] mb-4 line-clamp-3">
+                        <p class="text-primary mb-4 line-clamp-3">
                           {post.data.description}
                         </p>
                       </div>
@@ -107,7 +110,7 @@ const blogPosts = (
                       {post.data.tags && post.data.tags.length > 0 && (
                         <div class="flex flex-wrap gap-2 mt-4">
                           {post.data.tags.slice(0, 3).map((tag) => (
-                            <span class="px-3 py-1 text-xs font-medium bg-[var(--color-cream)] text-[var(--text-primary)] rounded-full">
+                            <span class="px-3 py-1 text-xs font-medium bg-cream text-primary rounded-full">
                               {tag}
                             </span>
                           ))}
@@ -116,9 +119,9 @@ const blogPosts = (
 
                       <a
                         href={postUrl}
-                        class="mt-6 inline-flex items-center gap-2 text-[var(--link-color)] hover:text-[var(--link-hover)] font-medium transition-colors group"
+                        class="mt-6 inline-flex items-center gap-2 text-primary hover:text-blue-light font-medium transition-colors group"
                       >
-                        {t('pages.blog.readMore')}
+                        {t("pages.blog.readMore")}
                         <svg
                           class="w-4 h-4 group-hover:translate-x-1 transition-transform"
                           fill="none"
@@ -146,22 +149,24 @@ const blogPosts = (
     <!-- Newsletter CTA -->
     <Section bgColor="cream">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-4">{t('pages.blog.newsletterTitle')}</h2>
-        <p class="text-lg text-[var(--text-secondary)] mb-8">
-          {t('pages.blog.newsletterText')}
+        <h2 class="text-3xl font-bold mb-4">
+          {t("pages.blog.newsletterTitle")}
+        </h2>
+        <p class="text-lg text-primary mb-8">
+          {t("pages.blog.newsletterText")}
         </p>
         <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
           <input
             type="email"
-            placeholder={t('pages.blog.emailPlaceholder')}
-            class="flex-1 px-4 py-3 rounded-full border border-[var(--border-color)] bg-white text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent"
+            placeholder={t("pages.blog.emailPlaceholder")}
+            class="flex-1 px-4 py-3 rounded-full border border-primary bg-white text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             required
           />
           <button
             type="submit"
-            class="px-8 py-3 bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] rounded-full font-medium hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-300"
+            class="px-8 py-3 bg-primary text-primary-text rounded-full font-medium hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-300"
           >
-            {t('pages.blog.subscribe')}
+            {t("pages.blog.subscribe")}
           </button>
         </form>
       </div>
