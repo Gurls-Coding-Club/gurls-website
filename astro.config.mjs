@@ -5,9 +5,13 @@ import icon from "astro-icon";
 
 import tailwindcss from "@tailwindcss/vite";
 
+import node from "@astrojs/node";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gurls.club", // Replace with your actual domain
+  // Replace with your actual domain
+  site: "https://gurls.bibisebi.com",
+
   i18n: {
     defaultLocale: "en",
     locales: ["en", "de"],
@@ -32,4 +36,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
+  adapter: node({
+    mode: "standalone",
+  }),
 });
