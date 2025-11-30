@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../Header.astro';
+import Hero from '../Hero.astro';
+import AboutSection from '../AboutSection.astro';
+import WhatWeStandFor from '../WhatWeStandFor.astro';
+import EventsCalendar from '../EventsCalendar.astro';
+import GetInvolvedCTA from '../GetInvolvedCTA.astro';
+import Footer from '../Footer.astro';
+import { useTranslations } from '../../i18n/utils';
+import type { Language } from '../../i18n/utils';
+
+interface Props {
+  locale: Language;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<BaseLayout title={t('pages.home.title')} description={t('pages.home.description')}>
+  <Header />
+  <main>
+    <Hero />
+    <AboutSection />
+    <WhatWeStandFor />
+    <EventsCalendar />
+    <GetInvolvedCTA />
+  </main>
+  <Footer />
+</BaseLayout>

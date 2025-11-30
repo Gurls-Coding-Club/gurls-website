@@ -13,7 +13,7 @@ export const defaultLang = "en";
 
 /**
  * Extracts the language code from a URL pathname.
- * For example: /en/about -> 'en', /de/about -> 'de'
+ * For example: /about -> 'en', /de/about -> 'de'
  */
 export function getLangFromUrl(url: URL): Language {
   const segments = url.pathname.split("/").filter(Boolean);
@@ -28,19 +28,26 @@ export function getLangFromUrl(url: URL): Language {
 
 /**
  * Generates a localized path for the given language.
- * Both languages now use a locale prefix (e.g., '/en/join', '/de/join').
+ * English uses no prefix (e.g., '/join'), German uses /de prefix (e.g., '/de/join').
  *
  * @param lang - The language code ('en' or 'de')
  * @param path - The path to localize (with or without leading slash)
  * @returns The localized path
  *
  * @example
- * getLocalizedPath('en', '/join') // Returns '/en/join'
+ * getLocalizedPath('en', '/join') // Returns '/join'
  * getLocalizedPath('de', '/join') // Returns '/de/join'
- * getLocalizedPath('en', '/#about') // Returns '/en/#about'
+ * getLocalizedPath('en', '/#about') // Returns '/#about'
  */
 export function getLocalizedPath(lang: Language, path: string): string {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
+
+  // English is the default locale, no prefix needed
+  if (lang === defaultLang) {
+    return cleanPath;
+  }
+
+  // Other languages get their prefix
   return `/${lang}${cleanPath}`;
 }
 

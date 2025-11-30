@@ -1,0 +1,125 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../Header.astro";
+import Footer from "../Footer.astro";
+import Section from "../Section.astro";
+import { useTranslations, getLocalizedPath } from "../../i18n/utils";
+import type { Language } from "../../i18n/utils";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  locale: Language;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+// Get FAQ items for the current locale, sorted by order
+const faqItems = (
+  await getCollection("faq", ({ id }) => id.startsWith(`${locale}/`))
+).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title={t("pages.faq.title")}
+  description={t("pages.faq.description")}
+>
+  <Header />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <Section bgColor="primary" className="pt-32 pb-16">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+          {t("pages.faq.heroTitle")}
+        </h1>
+        <p class="text-xl text-secondary max-w-2xl mx-auto">
+          {t("pages.faq.heroSubtitle")}
+        </p>
+      </div>
+    </Section>
+
+    <!-- FAQ Section -->
+    <Section bgColor="secondary">
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-4">
+          {
+            faqItems.map(async (item, index) => {
+              const { Content } = await item.render();
+              return (
+                <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                  <button
+                    class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 group"
+                    aria-expanded="false"
+                    data-faq-index={index}
+                  >
+                    <h3 class="text-lg font-semibold text-primary group-hover:text-blue-light transition-colors pr-4">
+                      {item.data.question}
+                    </h3>
+                    <Icon
+                      name="lucide:chevron-down"
+                      class="faq-icon w-6 h-6 text-primary flex-shrink-0 transition-transform duration-300"
+                    />
+                  </button>
+                  <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                    <div class="px-6 pb-5 pt-2 text-primary leading-relaxed prose prose-sm max-w-none">
+                      <Content />
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
+    </Section>
+
+    <!-- Still Have Questions CTA -->
+    <Section bgColor="cream">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">{t("pages.faq.ctaTitle")}</h2>
+        <p class="text-lg text-primary mb-8">
+          {t("pages.faq.ctaText")}
+        </p>
+        <a
+          href={getLocalizedPath(locale, "/contact")}
+          class="inline-block px-8 py-3 bg-primary text-primary-text rounded-full font-medium hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-300"
+        >
+          {t("pages.faq.ctaButton")}
+        </a>
+      </div>
+    </Section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  // FAQ Accordion functionality
+  document.addEventListener("DOMContentLoaded", () => {
+    const faqQuestions = document.querySelectorAll(".faq-question");
+
+    faqQuestions.forEach((question) => {
+      question.addEventListener("click", () => {
+        const faqItem = question.closest(".faq-item");
+        const answer = faqItem?.querySelector(".faq-answer") as HTMLElement;
+        const icon = question.querySelector(".faq-icon");
+        const isExpanded = question.getAttribute("aria-expanded") === "true";
+
+        // Toggle this FAQ item
+        if (answer) {
+          if (isExpanded) {
+            answer.style.maxHeight = "0";
+            question.setAttribute("aria-expanded", "false");
+            icon?.classList.remove("rotate-180");
+          } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            question.setAttribute("aria-expanded", "true");
+            icon?.classList.add("rotate-180");
+          }
+        }
+      });
+    });
+  });
+</script>

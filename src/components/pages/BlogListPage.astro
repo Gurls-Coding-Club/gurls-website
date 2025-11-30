@@ -1,0 +1,177 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../Header.astro";
+import Footer from "../Footer.astro";
+import Section from "../Section.astro";
+import { useTranslations, getLocalizedPath } from "../../i18n/utils";
+import type { Language } from "../../i18n/utils";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  locale: Language;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+// Get blog posts for the current locale
+const blogPosts = (
+  await getCollection("blog", ({ id }) => id.startsWith(`${locale}/`))
+).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout
+  title={t("pages.blog.title")}
+  description={t("pages.blog.description")}
+>
+  <Header />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <Section bgColor="primary" className="pt-32 pb-16">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+          {t("pages.blog.heroTitle")}
+        </h1>
+        <p class="text-xl text-secondary max-w-2xl mx-auto">
+          {t("pages.blog.heroSubtitle")}
+        </p>
+      </div>
+    </Section>
+
+    <!-- Blog Posts Grid -->
+    <Section bgColor="secondary">
+      <div class="max-w-6xl mx-auto">
+        {
+          blogPosts.length === 0 ? (
+            <div class="text-center py-12">
+              <p class="text-xl text-secondary">{t("pages.blog.noPosts")}</p>
+            </div>
+          ) : (
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogPosts.map((post) => {
+                const postUrl = getLocalizedPath(
+                  locale,
+                  `/blog/${post.slug.replace(`${locale}/`, "")}`
+                );
+
+                //TODO: Export into utils
+                const formattedDate = post.data.date.toLocaleDateString(
+                  locale === "de" ? "de-DE" : "en-US",
+                  {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  }
+                );
+
+                return (
+                  <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    {post.data.image && (
+                      <div class="aspect-video bg-gray-light overflow-hidden">
+                        <img
+                          src={post.data.image}
+                          alt={post.data.title}
+                          class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    )}
+
+                    <div class="p-6 flex-1 flex flex-col">
+                      <div class="flex-1">
+                        <div class="flex items-center gap-2 text-sm text-primary mb-3">
+                          <time datetime={post.data.date.toISOString()}>
+                            {formattedDate}
+                          </time>
+                          {post.data.author && (
+                            <>
+                              <span>•</span>
+                              <span>{post.data.author}</span>
+                            </>
+                          )}
+                        </div>
+
+                        <h2 class="text-2xl font-bold mb-3 text-primary">
+                          <a
+                            href={postUrl}
+                            class="hover:text-blue-light transition-colors"
+                          >
+                            {post.data.title}
+                          </a>
+                        </h2>
+
+                        <p class="text-primary mb-4 line-clamp-3">
+                          {post.data.description}
+                        </p>
+                      </div>
+
+                      {post.data.tags && post.data.tags.length > 0 && (
+                        <div class="flex flex-wrap gap-2 mt-4">
+                          {post.data.tags.slice(0, 3).map((tag) => (
+                            <span class="px-3 py-1 text-xs font-medium bg-cream text-primary rounded-full">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      <a
+                        href={postUrl}
+                        class="mt-6 inline-flex items-center gap-2 text-primary hover:text-blue-light font-medium transition-colors group"
+                      >
+                        {t("pages.blog.readMore")}
+                        <Icon
+                          name="lucide:chevron-right"
+                          class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                        />
+                      </a>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          )
+        }
+      </div>
+    </Section>
+
+    <!-- Newsletter CTA -->
+    <Section bgColor="cream">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          {t("pages.blog.newsletterTitle")}
+        </h2>
+        <p class="text-lg text-primary mb-8">
+          {t("pages.blog.newsletterText")}
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder={t("pages.blog.emailPlaceholder")}
+            class="flex-1 px-4 py-3 rounded-full border border-primary bg-white text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            required
+          />
+          <button
+            type="submit"
+            class="px-8 py-3 bg-primary text-primary-text rounded-full font-medium hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            {t("pages.blog.subscribe")}
+          </button>
+        </form>
+      </div>
+    </Section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Line clamp utility for description truncation */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
