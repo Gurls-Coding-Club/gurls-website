@@ -132,8 +132,6 @@ npx astro check      # Type-check TypeScript
 1. **Test your changes** locally
 2. **Run type checking**: `npx astro check`
 3. **Build the project**: `npm run build`
-4. **Update documentation** if needed
-5. **Write clear commit messages**
 
 ### Submitting a PR
 
