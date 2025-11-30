@@ -1,0 +1,123 @@
+name: 💡 Feature Request
+description: Suggest a new feature or improvement
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! We appreciate your ideas for making the G:URL*s website better.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Need
+      description: Is your feature request related to a problem? What need does this address?
+      placeholder: e.g., I'm frustrated when I can't find upcoming events easily, or Users have no way to stay updated with club news.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution you'd like to see.
+      placeholder: e.g., Add a prominent "Upcoming Events" section on the homepage that displays the next 3 events.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you considered any alternative solutions or features?
+      placeholder: e.g., Could also add a calendar view or an events widget in the sidebar.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Feature Category
+      description: What type of feature is this?
+      options:
+        - UI/UX Improvement
+        - New Page/Section
+        - Functionality Enhancement
+        - Accessibility
+        - Performance
+        - Content Management
+        - Internationalization
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Critical - Blocking my use of the site
+        - High - Would significantly improve my experience
+        - Medium - Nice to have
+        - Low - Small improvement
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Benefits
+      description: Who would benefit from this feature and how?
+      placeholder: |
+        e.g.,
+        - New visitors can quickly see what events are coming up
+        - Increases event attendance
+        - Makes the site more engaging
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples
+      description: Do you have examples from other websites or screenshots showing what you mean?
+      placeholder: |
+        e.g., "I really like how [other site] displays events in a grid with images"
+        You can paste images or links here.
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation Ideas (Optional)
+      description: If you have technical ideas about how to implement this, share them here!
+      placeholder: e.g., Could use the existing events content collection and display them with a new EventCard component.
+
+  - type: checkboxes
+    id: volunteer
+    attributes:
+      label: Contribution
+      description: Would you be willing to help implement this feature?
+      options:
+        - label: I'd be willing to submit a PR for this feature
+          required: false
+        - label: I can help with design/mockups
+          required: false
+        - label: I can help with testing
+          required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or information about the feature request here.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our code of conduct
+      options:
+        - label: I have checked existing issues to make sure this feature hasn't been requested before
+          required: true
+        - label: I agree to follow this project's Code of Conduct
+          required: true

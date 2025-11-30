@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 General Question or Discussion
+    url: https://github.com/yourusername/gurls-website/discussions
+    about: Ask questions or start discussions about the project
+  - name: 📖 Documentation
+    url: https://github.com/yourusername/gurls-website/blob/main/README.md
+    about: Check out the README and CONTRIBUTING guide for help getting started
+  - name: 🏗️ Architecture & Development Guide
+    url: https://github.com/yourusername/gurls-website/blob/main/CLAUDE.md
+    about: Technical architecture and development patterns
