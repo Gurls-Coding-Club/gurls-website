@@ -3,6 +3,7 @@
  * SEO Component - Comprehensive meta tags and structured data
  * WCAG compliant and optimized for search engines and social media
  */
+import { siteConfig, socialMediaArray } from "../config/site";
 
 interface Props {
   /** Page title - will be appended with site name */
@@ -43,10 +44,10 @@ const {
   noindex = false,
 } = Astro.props;
 
-const siteName = "G:URL*s Coding Club";
+const siteName = siteConfig.name;
 // Only append site name if not already present
 const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
-const siteUrl = Astro.site?.origin || "https://gurls.club";
+const siteUrl = Astro.site?.origin || siteConfig.url;
 const canonicalURL =
   canonical || new URL(Astro.url.pathname, siteUrl).toString();
 const imageURL = image.startsWith("http")
@@ -112,7 +113,7 @@ const twitterCard =
 <meta name="twitter:creator" content="@gurls_club" />
 
 <!-- Additional SEO -->
-<meta name="theme-color" content="#5759a6" />
+<meta name="theme-color" content={siteConfig.theme.primaryColor} />
 <meta name="color-scheme" content="light dark" />
 
 <!-- Structured Data - Organization -->
@@ -121,24 +122,22 @@ const twitterCard =
   set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "G:URL*s Coding Club",
+    name: siteConfig.name,
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
-    description: "Coding club for FLINTA* individuals in Vienna, Austria",
-    foundingDate: "2024",
+    description: siteConfig.description,
+    foundingDate: siteConfig.organization.foundingYear,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Vienna",
-      addressCountry: "AT",
+      streetAddress: siteConfig.contact.address.street,
+      postalCode: siteConfig.contact.address.postalCode,
+      addressLocality: siteConfig.contact.address.city,
+      addressCountry: siteConfig.contact.address.countryCode,
     },
-    sameAs: [
-      "https://instagram.com/gurls.club",
-      "https://linkedin.com/company/gurls-club",
-      "https://discord.gg/gurls",
-    ],
+    sameAs: socialMediaArray.map((social) => social.url),
     contactPoint: {
       "@type": "ContactPoint",
-      email: "hello@gurls.club",
+      email: siteConfig.contact.email,
       contactType: "General Inquiries",
     },
   })}

@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import SEO from '../components/SEO.astro';
 import { getLangFromUrl } from '../i18n/utils';
+import { siteConfig, getFullOrganizationName } from '../config/site';
 
 interface Props {
   title: string;
@@ -15,9 +16,11 @@ interface Props {
   noindex?: boolean;
 }
 
+const lang = getLangFromUrl(Astro.url);
+
 const {
   title,
-  description = "G:URL*s Coding Club - Empowering FLINTA* individuals through coding, community, and collaboration in Vienna, Austria.",
+  description = `${siteConfig.name} - Empowering ${siteConfig.organization.targetAudience} through coding, community, and collaboration in ${siteConfig.contact.address.city}, ${siteConfig.contact.address.country}.`,
   image,
   type = 'website',
   publishedTime,
@@ -26,8 +29,6 @@ const {
   tags,
   noindex = false,
 } = Astro.props;
-
-const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>

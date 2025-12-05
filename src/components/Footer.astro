@@ -6,9 +6,17 @@ import {
 } from "../i18n/utils";
 import Link from "./Link.astro";
 import { Icon } from "astro-icon/components";
+import { siteConfig, socialMediaArray } from "../config/site";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+// Map social platform to icon name
+const socialIcons = {
+  instagram: "lucide:instagram",
+  discord: "simple-icons:discord",
+  linkedin: "lucide:linkedin",
+} as const;
 ---
 
 <footer class="bg-primary text-primary-text pt-16 pb-8">
@@ -21,34 +29,22 @@ const t = useTranslations(lang);
           <p class="whitespace-pre-line opacity-90">{t("footer.address")}</p>
         </div>
         <div class="flex gap-3 mt-6">
-          <Link
-            variant="secondary"
-            href="https://instagram.com"
-            className="w-5 h-5"
-            aria-label="Instagram"
-          >
-            <Icon name="lucide:instagram" class="w-6 h-6" aria-hidden="true" />
-          </Link>
-          <Link
-            variant="secondary"
-            href="https://discord.com"
-            className="w-5 h-5"
-            aria-label="Discord"
-          >
-            <Icon
-              name="simple-icons:discord"
-              class="w-6 h-6"
-              aria-hidden="true"
-            />
-          </Link>
-          <Link
-            variant="secondary"
-            href="https://linkedin.com"
-            className="w-5 h-5"
-            aria-label="LinkedIn"
-          >
-            <Icon name="lucide:linkedin" class="w-6 h-6" aria-hidden="true" />
-          </Link>
+          {
+            socialMediaArray.map((social) => (
+              <Link
+                variant="secondary"
+                href={social.url}
+                className="w-5 h-5"
+                aria-label={social.name}
+              >
+                <Icon
+                  name={socialIcons[social.platform]}
+                  class="w-6 h-6"
+                  aria-hidden="true"
+                />
+              </Link>
+            ))
+          }
         </div>
       </div>
 
@@ -88,12 +84,12 @@ const t = useTranslations(lang);
         <h3 class="text-2xl font-bold mb-4">{t("footer.supportInitiative")}</h3>
         <ul class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-sm">
           <li class="mb-1">
-            {t("footer.bankingInfo.accountHolder")}: G:URL*S Coding Club
+            {t("footer.bankingInfo.accountHolder")}: {siteConfig.banking.accountHolder}
           </li>
-          <li class="mb-1 font-mono">IBAN: 0000 0000 0000 0000 0000</li>
-          <li class="mb-1 font-mono">BIC: XXXXXX</li>
-          <li class="mb-1">Bank: X Bank AG</li>
-          <li class="mt-1">{t("footer.bankingInfo.reference")}</li>
+          <li class="mb-1 font-mono">IBAN: {siteConfig.banking.iban}</li>
+          <li class="mb-1 font-mono">BIC: {siteConfig.banking.bic}</li>
+          <li class="mb-1">Bank: {siteConfig.banking.bank}</li>
+          <li class="mt-1">{t("footer.bankingInfo.reference")}: {siteConfig.banking.reference}</li>
         </ul>
       </div>
     </div>
@@ -103,22 +99,20 @@ const t = useTranslations(lang);
       <h3 class="text-xl font-bold text-center mb-6">{t("footer.sponsors")}</h3>
       <div class="flex flex-wrap justify-center items-center gap-8">
         <!-- Placeholder for sponsor logos -->
-        <div class="bg-white/10 backdrop-blur-sm rounded-lg px-8 py-4">
-          <p class="text-sm opacity-75">Sponsor Logo 1</p>
-        </div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-lg px-8 py-4">
-          <p class="text-sm opacity-75">Sponsor Logo 2</p>
-        </div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-lg px-8 py-4">
-          <p class="text-sm opacity-75">Sponsor Logo 3</p>
-        </div>
+        {
+          siteConfig.sponsors.map((sponsor) => (
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg px-8 py-4">
+              <p class="text-sm opacity-75">{sponsor.name}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
 
     <!-- Copyright -->
     <div class="border-t border-white/20 pt-6 text-center text-sm opacity-75">
       <p class="mb-3">
-        {t("footer.photoCredits")}: {t("footer.photoCreditsName")}
+        {t("footer.photoCredits")}: {siteConfig.media.photographer}
       </p>
       <p class="mb-3">{t("footer.copyright")}</p>
       <div class="flex flex-wrap justify-center gap-4">

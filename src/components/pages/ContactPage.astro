@@ -7,6 +7,7 @@ import Link from "../Link.astro";
 import { useTranslations } from "../../i18n/utils";
 import type { Language } from "../../i18n/utils";
 import { Icon } from "astro-icon/components";
+import { siteConfig } from "../../config/site";
 
 interface Props {
   locale: Language;
@@ -14,6 +15,13 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+
+// Map social platform to icon name
+const socialIcons = {
+  instagram: "lucide:instagram",
+  discord: "simple-icons:discord",
+  linkedin: "lucide:linkedin",
+} as const;
 ---
 
 <BaseLayout
@@ -59,10 +67,10 @@ const t = useTranslations(locale);
                     {t("pages.contact.emailLabel")}
                   </h3>
                   <a
-                    href="mailto:hello@gurls.club"
+                    href={`mailto:${siteConfig.contact.email}`}
                     class="text-primary hover:text-blue-light transition-colors"
                   >
-                    hello@gurls.club
+                    {siteConfig.contact.email}
                   </a>
                 </div>
               </div>
@@ -92,20 +100,23 @@ const t = useTranslations(locale);
                     {t("pages.contact.followLabel")}
                   </h3>
                   <div class="flex gap-2">
-                    <Link href="https://instagram.com" icon="lucide:instagram">
-                      Instagram
-                      <span>•</span>
-                    </Link>
-                    <Link
-                      href="https://discord.com"
-                      icon="simple-icons:discord"
-                    >
-                      Discord
-                      <span>•</span>
-                    </Link>
-                    <Link href="https://linkedin.com" icon="lucide:linkedin">
-                      LinkedIn
-                    </Link>
+                    {
+                      Object.entries(siteConfig.social).map(
+                        ([key, social], index, arr) => (
+                          <>
+                            <Link
+                              href={social.url}
+                              icon={
+                                socialIcons[key as keyof typeof socialIcons]
+                              }
+                            >
+                              {social.name}
+                            </Link>
+                            {index < arr.length - 1 && <span>•</span>}
+                          </>
+                        )
+                      )
+                    }
                   </div>
                 </div>
               </div>
