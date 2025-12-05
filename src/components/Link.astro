@@ -22,6 +22,8 @@ interface Props {
   newTab?: boolean;
   /** Layout direction (default: "horizontal") */
   direction?: "horizontal" | "vertical";
+  /** Accessible label for screen readers (required for icon-only links) */
+  "aria-label"?: string;
 }
 
 const {
@@ -29,6 +31,7 @@ const {
   variant = "primary",
   className = "",
   newTab = false,
+  "aria-label": ariaLabel,
 } = Astro.props;
 
 const variantClasses = {
@@ -42,6 +45,7 @@ const variantClasses = {
   target={newTab ? "_blank" : undefined}
   rel={newTab ? "noopener noreferrer" : undefined}
   class={`${variantClasses[variant]} hover:text-blue-light transition-colors ${className}`}
+  aria-label={ariaLabel}
 >
   <slot />
 </a>

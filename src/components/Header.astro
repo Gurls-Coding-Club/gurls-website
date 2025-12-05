@@ -5,11 +5,11 @@ import {
   getLocalizedPath,
 } from "../i18n/utils";
 import LanguageSelector from "./LanguageSelector.astro";
-import NavigationItem from "./NavigationItem.astro";
 import NavigationDropdown from "./NavigationDropdown.astro";
 import { navigationItems, getMobileNavigationItems } from "./navigationConfig";
 import type { DropdownItem } from "./NavigationDropdown.astro";
 import { Icon } from "astro-icon/components";
+import Link from "./Link.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -24,13 +24,14 @@ const mobileNavItems = getMobileNavigationItems();
     aria-label="Main navigation"
   >
     <!-- Logo -->
-    <a
+    <Link
+      variant="secondary"
       href={getLocalizedPath(lang, "/")}
-      class="text-2xl font-bold tracking-tight"
+      className="text-2xl font-bold tracking-tight"
       aria-label="G:URL*s home"
     >
       G:URL*s
-    </a>
+    </Link>
 
     <!-- Desktop Navigation -->
     <div class="hidden lg:flex items-center gap-8">
@@ -38,10 +39,12 @@ const mobileNavItems = getMobileNavigationItems();
         navigationItems.map((item) => {
           if (item.type === "link") {
             return (
-              <NavigationItem
+              <Link
+                variant="secondary"
                 href={getLocalizedPath(lang, item.href)}
-                label={t(item.labelKey)}
-              />
+              >
+                {t(item.labelKey)}
+              </Link>
             );
           } else if (item.type === "dropdown") {
             // Transform dropdown items to use localized paths and translated labels

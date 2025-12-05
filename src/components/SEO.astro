@@ -44,7 +44,8 @@ const {
 } = Astro.props;
 
 const siteName = "G:URL*s Coding Club";
-const fullTitle = `${title} | ${siteName}`;
+// Only append site name if not already present
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
 const siteUrl = Astro.site?.origin || "https://gurls.club";
 const canonicalURL =
   canonical || new URL(Astro.url.pathname, siteUrl).toString();
