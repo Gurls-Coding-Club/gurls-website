@@ -18,7 +18,8 @@
   "hero": {
     "title": "Coding Club for FLINTA* in Vienna",
     "learnMore": "Learn More",
-    "joinUs": "Join Us"
+    "joinUs": "Join Us",
+    "scrollDown": "Scroll down to learn more"
   },
   "about": {
     "title": "Meet G:URL*s",
@@ -90,11 +91,11 @@
   },
   "pages": {
     "home": {
-      "title": "G:URL*s - Coding Club for FLINTA* in Vienna",
+      "title": "Home",
       "description": "We're a coding club for the FLINTA* community, open to anyone interested in learning or improving their programming skills."
     },
     "blog": {
-      "title": "Blog | G:URL*s Coding Club",
+      "title": "Blog",
       "description": "Read the latest news, tutorials, and stories from the G:URL*s community.",
       "heroTitle": "Our Blog",
       "heroSubtitle": "Stories, insights, and updates from the G:URL*s community",
@@ -106,7 +107,7 @@
       "subscribe": "Subscribe"
     },
     "contact": {
-      "title": "Contact Us | G:URL*s Coding Club",
+      "title": "Contact Us",
       "description": "Get in touch with G:URL*s Coding Club. Send us a message, ask questions, or share your ideas.",
       "heroTitle": "Get In Touch",
       "heroSubtitle": "Have a question, idea, or just want to say hello? We'd love to hear from you!",
@@ -146,7 +147,7 @@
       "by": "By"
     },
     "notFound": {
-      "title": "404 - Page Not Found | G:URL*s Coding Club",
+      "title": "404 - Page Not Found",
       "description": "The page you're looking for doesn't exist.",
       "number": "404",
       "heading": "Page Not Found",
@@ -155,7 +156,7 @@
       "contactButton": "Contact Us"
     },
     "faq": {
-      "title": "FAQ | G:URL*s Coding Club",
+      "title": "FAQ",
       "description": "Frequently asked questions about G:URL*s Coding Club. Learn about our events, membership, and how to get involved.",
       "heroTitle": "Frequently Asked Questions",
       "heroSubtitle": "Find answers to common questions about our coding club, events, and community",

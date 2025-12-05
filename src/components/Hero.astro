@@ -6,6 +6,8 @@ import {
   getLocalizedPath,
 } from "../i18n/utils";
 import Button from "./Button.astro";
+import Link from "./Link.astro";
+import { Icon } from "astro-icon/components";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -51,21 +53,16 @@ const t = useTranslations(lang);
   </div>
 
   <!-- Scroll indicator -->
-  <a
+  <Link
     href="#about"
-    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+    variant="secondary"
+    className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+    aria-label={t("hero.scrollDown")}
   >
-    <svg
-      class="w-6 h-6 text-white animate-bounce"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-    </svg>
-  </a>
+    <Icon
+      name="lucide:arrow-down"
+      class="w-6 h-6 animate-bounce"
+      aria-hidden="true"
+    />
+  </Link>
 </section>

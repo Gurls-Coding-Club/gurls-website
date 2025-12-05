@@ -379,7 +379,7 @@ const { locale } = Astro.params as { locale: Language };
 {
   "pages": {
     "newPage": {
-      "title": "New Page | G:URL*s Coding Club",
+      "title": "New Page",
       "description": "Description for the new page",
       "heading": "New Page Heading",
       "content": "Page content here"

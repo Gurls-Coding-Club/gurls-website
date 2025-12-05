@@ -18,7 +18,8 @@
   "hero": {
     "title": "Coding Club für FLINTA* in Wien",
     "learnMore": "Mehr Erfahren",
-    "joinUs": "Beitreten"
+    "joinUs": "Beitreten",
+    "scrollDown": "Scrollen Sie nach unten, um mehr zu erfahren"
   },
   "about": {
     "title": "Lerne G:URL*s kennen",
@@ -94,7 +95,7 @@
       "description": "Wir sind ein Coding Club für die FLINTA*-Community, offen für alle, die daran interessiert sind, ihre Programmierkenntnisse zu erlernen oder zu verbessern."
     },
     "blog": {
-      "title": "Blog | G:URL*s Coding Club",
+      "title": "Blog",
       "description": "Lesen Sie die neuesten Nachrichten, Tutorials und Geschichten aus der G:URL*s Community.",
       "heroTitle": "Unser Blog",
       "heroSubtitle": "Geschichten, Einblicke und Updates aus der G:URL*s Community",
@@ -106,7 +107,7 @@
       "subscribe": "Abonnieren"
     },
     "contact": {
-      "title": "Kontakt | G:URL*s Coding Club",
+      "title": "Kontakt",
       "description": "Kontaktiere G:URL*s Coding Club. Sende uns eine Nachricht, stelle Fragen oder teile deine Ideen.",
       "heroTitle": "Kontaktiere Uns",
       "heroSubtitle": "Hast du eine Frage, Idee oder möchtest einfach nur Hallo sagen? Wir freuen uns von dir zu hören!",
@@ -146,7 +147,7 @@
       "by": "Von"
     },
     "notFound": {
-      "title": "404 - Seite Nicht Gefunden | G:URL*s Coding Club",
+      "title": "404 - Seite Nicht Gefunden",
       "description": "Die Seite, die du suchst, existiert nicht.",
       "number": "404",
       "heading": "Seite Nicht Gefunden",
@@ -155,7 +156,7 @@
       "contactButton": "Kontaktiere Uns"
     },
     "faq": {
-      "title": "FAQ | G:URL*s Coding Club",
+      "title": "FAQ",
       "description": "Häufig gestellte Fragen über G:URL*s Coding Club. Erfahre mehr über unsere Events, Mitgliedschaft und wie du mitmachen kannst.",
       "heroTitle": "Häufig Gestellte Fragen",
       "heroSubtitle": "Finde Antworten auf häufige Fragen über unseren Coding Club, Events und Community",
