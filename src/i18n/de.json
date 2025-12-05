@@ -163,6 +163,26 @@
       "ctaTitle": "Noch Fragen?",
       "ctaText": "Kannst du nicht finden, wonach du suchst? Kontaktiere uns gerne direkt.",
       "ctaButton": "Kontaktiere Uns"
+    },
+    "imprint": {
+      "title": "Impressum",
+      "description": "Rechtliche Informationen und Impressum für G:URL*s Coding Club gemäß österreichischem Recht.",
+      "heroTitle": "Impressum",
+      "heroSubtitle": "Rechtliche Informationen",
+      "organizationTitle": "Angaben zur Organisation",
+      "name": "Organisationsname",
+      "address": "Adresse",
+      "contactTitle": "Kontaktinformationen",
+      "email": "E-Mail",
+      "website": "Website",
+      "legalTitle": "Rechtliche Angaben",
+      "legalForm": "Rechtsform",
+      "legalFormValue": "Gemeinnütziger Verein",
+      "foundingYear": "Gründungsjahr",
+      "purpose": "Vereinszweck",
+      "purposeValue": "Förderung von Flinta Personen im Bereich Technik vom Studium bis zum Berufseinstieg",
+      "zvr": "ZVR-Nummer",
+      "representatives": "Vertretungsberechtigte Personen"
     }
   }
 }

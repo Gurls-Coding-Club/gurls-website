@@ -1,0 +1,20 @@
+---
+/**
+ * Localized Imprint Page
+ * Route: /de/imprint (German), etc.
+ */
+import ImprintPage from '../../components/pages/ImprintPage.astro';
+import { languages } from '../../i18n/utils';
+import type { Language } from '../../i18n/utils';
+
+export async function getStaticPaths() {
+  // Only generate paths for non-default locales
+  return languages.filter(lang => lang !== 'en').map((locale) => ({
+    params: { locale },
+  }));
+}
+
+const { locale } = Astro.params as { locale: Language };
+---
+
+<ImprintPage locale={locale} />

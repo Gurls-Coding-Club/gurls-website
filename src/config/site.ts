@@ -15,17 +15,18 @@ export const siteConfig = {
   // Organization details
   organization: {
     name: "G:URL*s Coding Club",
+    fullLegalName: "G:URL*s coding club Programmierprogramm und Beratungsgemeinschaft für Studierende",
     foundingYear: "2024",
-    type: "Coding Club",
+    type: "Verein (Non-profit organization)",
     targetAudience: "FLINTA* community",
   },
 
   // Contact information
   contact: {
-    email: "hello@gurls.club",
+    email: "codingclubvienna@gmail.com",
     address: {
-      street: "Kreativstraße 12",
-      postalCode: "1150",
+      street: "Pezzelgasse 11",
+      postalCode: "1170",
       city: "Vienna",
       country: "Austria",
       countryCode: "AT",
@@ -92,6 +93,19 @@ export const siteConfig = {
     primaryColor: "#5759a6",
     secondaryColor: "#6c95b8",
     accentColor: "#6466e1",
+  },
+
+  // Legal information
+  legal: {
+    fullLegalName: "G:URL*s coding club Programmierprogramm und Beratungsgemeinschaft für Studierende",
+    zvr: "1084046589",
+    representatives: [
+      "Emily Aline Grubb",
+      "Laura Kathleen Goebel",
+      "Lara Mijanovic",
+    ],
+    regulatoryAuthority: "Magistrat der Stadt Wien",
+    registrationAuthority: "Landespolizeidirektion Wien",
   },
 } as const;
 

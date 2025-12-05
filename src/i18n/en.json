@@ -163,6 +163,26 @@
       "ctaTitle": "Still Have Questions?",
       "ctaText": "Can't find what you're looking for? Feel free to reach out to us directly.",
       "ctaButton": "Contact Us"
+    },
+    "imprint": {
+      "title": "Imprint",
+      "description": "Legal information and imprint for G:URL*s Coding Club according to Austrian law.",
+      "heroTitle": "Imprint",
+      "heroSubtitle": "Legal Information (Impressum)",
+      "organizationTitle": "Organization Information",
+      "name": "Organization Name",
+      "address": "Address",
+      "contactTitle": "Contact Information",
+      "email": "Email",
+      "website": "Website",
+      "legalTitle": "Legal Information",
+      "legalForm": "Legal Form",
+      "legalFormValue": "Non-profit organization (Verein)",
+      "foundingYear": "Founding Year",
+      "purpose": "Purpose",
+      "purposeValue": "Promoting FLINTA* individuals in technology from education to career entry",
+      "zvr": "ZVR Number",
+      "representatives": "Legal Representatives"
     }
   }
 }

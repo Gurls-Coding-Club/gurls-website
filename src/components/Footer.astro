@@ -84,12 +84,16 @@ const socialIcons = {
         <h3 class="text-2xl font-bold mb-4">{t("footer.supportInitiative")}</h3>
         <ul class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-sm">
           <li class="mb-1">
-            {t("footer.bankingInfo.accountHolder")}: {siteConfig.banking.accountHolder}
+            {t("footer.bankingInfo.accountHolder")}: {
+              siteConfig.banking.accountHolder
+            }
           </li>
           <li class="mb-1 font-mono">IBAN: {siteConfig.banking.iban}</li>
           <li class="mb-1 font-mono">BIC: {siteConfig.banking.bic}</li>
           <li class="mb-1">Bank: {siteConfig.banking.bank}</li>
-          <li class="mt-1">{t("footer.bankingInfo.reference")}: {siteConfig.banking.reference}</li>
+          <li class="mt-1">
+            {t("footer.bankingInfo.reference")}: {siteConfig.banking.reference}
+          </li>
         </ul>
       </div>
     </div>
@@ -111,30 +115,13 @@ const socialIcons = {
 
     <!-- Copyright -->
     <div class="border-t border-white/20 pt-6 text-center text-sm opacity-75">
-      <p class="mb-3">
-        {t("footer.photoCredits")}: {siteConfig.media.photographer}
-      </p>
       <p class="mb-3">{t("footer.copyright")}</p>
       <div class="flex flex-wrap justify-center gap-4">
         <a
-          href={getLocalizedPath(lang, "/privacy")}
+          href={getLocalizedPath(lang, "/imprint")}
           class="hover:text-blue-light transition-colors"
         >
-          {t("footer.privacyPolicy")}
-        </a>
-        <span>|</span>
-        <a
-          href={getLocalizedPath(lang, "/cookies")}
-          class="hover:text-blue-light transition-colors"
-        >
-          {t("footer.cookiePolicy")}
-        </a>
-        <span>|</span>
-        <a
-          href={getLocalizedPath(lang, "/terms")}
-          class="hover:text-blue-light transition-colors"
-        >
-          {t("footer.termsOfUse")}
+          {t("pages.imprint.title")}
         </a>
         <span>|</span>
         <a
