@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../Header.astro";
 import Footer from "../Footer.astro";
 import Section from "../Section.astro";
+import Tag from "../Tag.astro";
 import { useTranslations, getLocalizedPath } from "../../i18n/utils";
 import type { Language } from "../../i18n/utils";
 import { Icon } from "astro-icon/components";
@@ -109,9 +110,12 @@ const blogPosts = (
                       {post.data.tags && post.data.tags.length > 0 && (
                         <div class="flex flex-wrap gap-2 mt-4">
                           {post.data.tags.slice(0, 3).map((tag) => (
-                            <span class="px-3 py-1 text-xs font-medium bg-cream text-primary rounded-full">
-                              {tag}
-                            </span>
+                            <Tag
+                              label={tag}
+                              variant="accent"
+                              size="sm"
+                              showHash
+                            />
                           ))}
                         </div>
                       )}

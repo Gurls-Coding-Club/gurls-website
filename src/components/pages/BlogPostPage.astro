@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../Header.astro";
 import Footer from "../Footer.astro";
 import Section from "../Section.astro";
+import Tag from "../Tag.astro";
 import {
   getLocalizedPath,
   useTranslations,
@@ -101,9 +102,7 @@ const formattedDate = entry.data.date.toLocaleDateString(
             entry.data.tags && entry.data.tags.length > 0 && (
               <div class="flex flex-wrap gap-2 mb-4">
                 {entry.data.tags.map((tag) => (
-                  <span class="px-3 py-1 text-sm  bg-accent bg-opacity-20 text-primary-text rounded-full">
-                    #{tag}
-                  </span>
+                  <Tag label={tag} variant="accent" size="md" showHash={true} />
                 ))}
               </div>
             )

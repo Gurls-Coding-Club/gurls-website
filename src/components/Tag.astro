@@ -1,0 +1,44 @@
+---
+/**
+ * Tag component - A reusable tag/badge component for categories, topics, etc.
+ *
+ * Displays a styled tag with consistent appearance across blog posts and lists.
+ */
+
+interface Props {
+  /** Tag text to display */
+  label: string;
+  /** Tag variant (default: "primary") */
+  variant?: "primary" | "accent";
+  /** Tag size (default: "md") */
+  size?: "sm" | "md";
+  /** Show hash symbol before tag (default: false) */
+  showHash?: boolean;
+  /** Additional CSS classes */
+  className?: string;
+}
+
+const {
+  label,
+  variant = "primary",
+  size = "md",
+  showHash = false,
+  className = "",
+} = Astro.props;
+
+const variantClasses = {
+  primary: "bg-cream text-primary",
+  accent: "bg-accent bg-opacity-20 text-primary-text",
+};
+
+const sizeClasses = {
+  sm: "px-3 py-1 text-xs",
+  md: "px-3 py-1 text-sm",
+};
+---
+
+<span
+  class={`font-medium rounded-full ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+>
+  {showHash && "#"}{label}
+</span>
