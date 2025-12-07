@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../Header.astro";
+import Footer from "../Footer.astro";
+import Section from "../Section.astro";
+import { useTranslations } from "../../i18n/utils";
+import type { Language } from "../../i18n/utils";
+
+interface Props {
+  locale: Language;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<BaseLayout
+  title={t("pages.notFound.title")}
+  description={t("pages.notFound.description")}
+>
+  <Header />
+
+  <main class="pt-20">
+    <Section bgColor="primary" className="py-32">
+      <div class="max-w-3xl mx-auto text-center text-secondary">
+        <!-- 404 Number -->
+        <h1 class="text-4xl font-bold mb-6">
+          {t("pages.notFound.number")}
+        </h1>
+
+        <!-- Message -->
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          {t("pages.notFound.heading")}
+        </h2>
+
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          {t("pages.notFound.message")}
+        </p>
+
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={locale === "en" ? "/" : `/${locale}/`}
+            class="px-8 py-3 bg-secondary text-primary rounded-full font-medium hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            {t("pages.notFound.homeButton")}
+          </a>
+          <a
+            href={locale === "en" ? "/contact" : `/${locale}/contact`}
+            class="px-8 py-3 bg-white text-primary rounded-full font-medium hover:bg-cream shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            {t("pages.notFound.contactButton")}
+          </a>
+        </div>
+      </div>
+    </Section>
+  </main>
+
+  <Footer />
+</BaseLayout>

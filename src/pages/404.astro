@@ -1,55 +1,8 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import Section from "../components/Section.astro";
-import { useTranslations, getLangFromUrl } from "../i18n/utils";
+import NotFoundPage from "../components/pages/NotFoundPage.astro";
+import { getLangFromUrl } from "../i18n/utils";
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const locale = getLangFromUrl(Astro.url);
 ---
 
-<BaseLayout
-  title={t("pages.notFound.title")}
-  description={t("pages.notFound.description")}
->
-  <Header />
-
-  <main class="pt-20">
-    <Section bgColor="primary" className="py-32">
-      <div class="max-w-3xl mx-auto text-center text-secondary">
-        <!-- 404 Number -->
-        <h1 class="text-4xl font-bold mb-6">
-          {t("pages.notFound.number")}
-        </h1>
-
-        <!-- Message -->
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          {t("pages.notFound.heading")}
-        </h2>
-
-        <p class="text-xl mb-8 max-w-2xl mx-auto">
-          {t("pages.notFound.message")}
-        </p>
-
-        <!-- Actions -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={`/${lang}/`}
-            class="px-8 py-3 bg-secondary text-primary rounded-full font-medium hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            {t("pages.notFound.homeButton")}
-          </a>
-          <a
-            href={`/${lang}/contact`}
-            class="px-8 py-3 bg-white text-primary rounded-full font-medium hover:bg-cream shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            {t("pages.notFound.contactButton")}
-          </a>
-        </div>
-      </div>
-    </Section>
-  </main>
-
-  <Footer />
-</BaseLayout>
+<NotFoundPage locale={locale} />
