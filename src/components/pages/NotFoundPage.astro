@@ -3,8 +3,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../Header.astro";
 import Footer from "../Footer.astro";
 import Section from "../Section.astro";
-import { useTranslations } from "../../i18n/utils";
+import { getLocalizedPath, useTranslations } from "../../i18n/utils";
 import type { Language } from "../../i18n/utils";
+import Button from "../Button.astro";
 
 interface Props {
   locale: Language;
@@ -39,18 +40,17 @@ const t = useTranslations(locale);
 
         <!-- Actions -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={locale === "en" ? "/" : `/${locale}/`}
-            class="px-8 py-3 bg-secondary text-primary rounded-full font-medium hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            {t("pages.notFound.homeButton")}
-          </a>
-          <a
-            href={locale === "en" ? "/contact" : `/${locale}/contact`}
-            class="px-8 py-3 bg-white text-primary rounded-full font-medium hover:bg-cream shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            {t("pages.notFound.contactButton")}
-          </a>
+          <Button variant="secondary" size="md">
+            <a href={getLocalizedPath(locale, "/")}>
+              {t("pages.notFound.homeButton")}
+            </a>
+          </Button>
+
+          <Button variant="outline" size="md">
+            <a href={getLocalizedPath(locale, "/contact")}>
+              {t("pages.notFound.contactButton")}
+            </a>
+          </Button>
         </div>
       </div>
     </Section>
