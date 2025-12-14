@@ -15,7 +15,8 @@ export const siteConfig = {
   // Organization details
   organization: {
     name: "G:URL*s Coding Club",
-    fullLegalName: "G:URL*s coding club Programmierprogramm und Beratungsgemeinschaft für Studierende",
+    fullLegalName:
+      "G:URL*s coding club Programmierprogramm und Beratungsgemeinschaft für Studierende",
     foundingYear: "2024",
     type: "Verein (Non-profit organization)",
     targetAudience: "FLINTA* community",
@@ -25,10 +26,12 @@ export const siteConfig = {
   contact: {
     email: "codingclubvienna@gmail.com",
     address: {
-      street: "Pezzelgasse 11",
-      postalCode: "1170",
+      street: "Herbststraße 67/8",
+      postalCode: "1160",
       city: "Vienna",
+      cityDe: "Wien",
       country: "Austria",
+      countryDe: "Österreich",
       countryCode: "AT",
     },
   },
@@ -97,7 +100,8 @@ export const siteConfig = {
 
   // Legal information
   legal: {
-    fullLegalName: "G:URL*s coding club Programmierprogramm und Beratungsgemeinschaft für Studierende",
+    fullLegalName:
+      "G:URL*s coding club Programmierprogramm und Beratungsgemeinschaft für Studierende",
     zvr: "1084046589",
     representatives: [
       "Emily Aline Grubb",
@@ -122,8 +126,11 @@ export const socialMediaArray = Object.entries(siteConfig.social).map(
 
 // Helper to format address
 export function formatAddress(locale: "en" | "de" = "en"): string {
-  const { street, postalCode, city, country } = siteConfig.contact.address;
-  return `${street},\n${postalCode} ${city}, ${country}`;
+  const { street, postalCode, city, cityDe, country, countryDe } =
+    siteConfig.contact.address;
+  const localizedCity = locale === "de" ? cityDe : city;
+  const localizedCountry = locale === "de" ? countryDe : country;
+  return `${street},\n${postalCode} ${localizedCity}, ${localizedCountry}`;
 }
 
 // Helper to get full organization name with location
