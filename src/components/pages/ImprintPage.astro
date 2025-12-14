@@ -45,95 +45,105 @@ const t = useTranslations(locale);
     <Section bgColor="secondary">
       <div class="container mx-auto px-4 py-16 max-w-4xl">
         <div class="prose prose-lg max-w-none">
-          <!-- Organization Information -->
-          <section class="mb-12">
-            <h2 class="text-3xl font-bold mb-6">
+          <!-- Organization Name -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">
               {t("pages.imprint.organizationTitle")}
             </h2>
-            <div class="bg-white rounded-lg p-6 shadow-sm">
-              <p class="mb-2">
-                <strong>{t("pages.imprint.name")}:</strong>
-                {siteConfig.name}
-              </p>
-              <p class="mb-2">
-                <strong>{t("pages.imprint.address")}:</strong><br />
-                {siteConfig.contact.address.street}<br />
-                {siteConfig.contact.address.postalCode}
-                {siteConfig.contact.address.city}<br />
-                {siteConfig.contact.address.country}
-              </p>
-            </div>
+            <p>
+              {t("pages.imprint.organizationName")}
+            </p>
           </section>
 
-          <!-- Contact Information -->
-          <section class="mb-12">
-            <h2 class="text-3xl font-bold mb-6">
+          <!-- Registered Office -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">
+              {t("pages.imprint.headquartersTitle")}
+            </h2>
+            <p>
+              {siteConfig.contact.address.street}<br />
+              {siteConfig.contact.address.postalCode}
+              {siteConfig.contact.address.city}
+            </p>
+          </section>
+
+          <!-- Contact -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">
               {t("pages.imprint.contactTitle")}
             </h2>
-            <div class="bg-white rounded-lg p-6 shadow-sm">
-              <p class="mb-2">
-                <strong>{t("pages.imprint.email")}:</strong>{" "}
-                <a
-                  href={`mailto:${siteConfig.contact.email}`}
-                  class="text-primary hover:text-blue-light"
-                >
-                  {siteConfig.contact.email}
-                </a>
-              </p>
-              <p class="mb-2">
-                <strong>{t("pages.imprint.website")}:</strong>{" "}
-                <a
-                  href={siteConfig.url}
-                  class="text-primary hover:text-blue-light"
-                >
-                  {siteConfig.url}
-                </a>
-              </p>
-            </div>
+            <p>
+              <strong>{t("pages.imprint.email")}:</strong>{" "}
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                class="text-primary hover:text-blue-light"
+              >
+                {siteConfig.contact.email}
+              </a>
+            </p>
           </section>
 
-          <!-- Legal Information -->
-          <section class="mb-12">
-            <h2 class="text-3xl font-bold mb-6">
-              {t("pages.imprint.legalTitle")}
+          <!-- Purpose -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">
+              {t("pages.imprint.purposeTitle")}
             </h2>
-            <div class="bg-white rounded-lg p-6 shadow-sm">
-              <p class="mb-4">
-                <strong>{t("pages.imprint.legalForm")}:</strong>
-                {t("pages.imprint.legalFormValue")}
-              </p>
-              <p class="mb-4">
-                <strong>{t("pages.imprint.foundingYear")}:</strong>
-                {siteConfig.organization.foundingYear}
-              </p>
-              <p class="mb-4">
-                <strong>{t("pages.imprint.zvr")}:</strong>
-                {siteConfig.legal.zvr}
-              </p>
-              <p class="mb-4">
-                <strong>{t("pages.imprint.purpose")}:</strong>
-                {t("pages.imprint.purposeValue")}
-              </p>
-            </div>
+            <p>
+              {t("pages.imprint.purposeValue")}
+            </p>
           </section>
 
-          <!-- Legal Representatives -->
-          <section class="mb-12">
-            <h2 class="text-3xl font-bold mb-6">
-              {t("pages.imprint.representatives")}
+          <!-- Authorized Representatives -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">
+              {t("pages.imprint.representativesTitle")}
             </h2>
-            <div class="bg-white rounded-lg p-6 shadow-sm">
-              <ul class="list-disc list-inside text-gray-700">
-                {
-                  siteConfig.legal.representatives.map((rep) => (
-                    <li class="mb-1">{rep}</li>
-                  ))
-                }
-              </ul>
-            </div>
+
+            <ul class="list-disc list-inside">
+              {siteConfig.legal.representatives.map((rep) => <li>{rep}</li>)}
+            </ul>
           </section>
 
-          <!-- Responsible for Content -->
+          <!-- Responsible Supervisory Authority -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">
+              {t("pages.imprint.supervisoryAuthorityTitle")}
+            </h2>
+            <p>
+              {t("pages.imprint.supervisoryAuthorityValue")}
+            </p>
+          </section>
+
+          <!-- Association Registration Number -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">
+              {t("pages.imprint.registrationNumberTitle")}
+            </h2>
+            <p>
+              <strong>ZVR:</strong>
+              {siteConfig.legal.zvr}
+            </p>
+          </section>
+
+          <!-- Association Authority -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">
+              {t("pages.imprint.associationAuthorityTitle")}
+            </h2>
+            <p>
+              {t("pages.imprint.associationAuthorityValue")}
+            </p>
+          </section>
+
+          <!-- Disclaimer -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">
+              {t("pages.imprint.disclaimerTitle")}
+            </h2>
+            <p>
+              {t("pages.imprint.disclaimerText")}
+            </p>
+          </section>
         </div>
       </div>
     </Section>
