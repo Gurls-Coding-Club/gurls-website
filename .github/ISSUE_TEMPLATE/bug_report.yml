@@ -69,7 +69,7 @@ body:
     attributes:
       label: URL
       description: If applicable, provide the URL where the bug occurs
-      placeholder: e.g., https://gurls.bibisebi.com/blog
+      placeholder: e.g., https://gurlscodingclub.com/blog
 
   - type: dropdown
     id: browser

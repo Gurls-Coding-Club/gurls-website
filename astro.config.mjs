@@ -10,7 +10,7 @@ import node from "@astrojs/node";
 // https://astro.build/config
 export default defineConfig({
   // Replace with your actual domain
-  site: "https://gurls.bibisebi.com",
+  site: "https://gurlscodingclub.com",
 
   i18n: {
     defaultLocale: "en",
