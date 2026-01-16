@@ -24,7 +24,7 @@ export const siteConfig = {
 
   // Contact information
   contact: {
-    email: "codingclubvienna@gmail.com",
+    email: "info@gurlscodingclub.com",
     address: {
       street: "Herbststraße 67/8",
       postalCode: "1160",

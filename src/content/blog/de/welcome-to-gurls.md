@@ -12,7 +12,7 @@ Wir freuen uns, unsere neue Website zu starten! G:URL*s ist ein Coding Club, der
 
 ## Was Wir Bieten
 
-- Zweiwöchentliche Workshops und Coding-Sessions
+- Workshops und Coding-Sessions während des Semesters
 - Tech-Talks von Branchenexperten
 - Soziale Events und Networking-Möglichkeiten
 - Eine unterstützende Community Gleichgesinnter

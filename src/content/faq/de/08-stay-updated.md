@@ -4,4 +4,4 @@ order: 8
 category: "Veranstaltungen"
 ---
 
-Du kannst unseren Newsletter abonnieren, uns auf Social Media folgen oder unseren Veranstaltungskalender regelmäßig checken. Wir kündigen alle kommenden Workshops, Meetups und Community-Sessions rechtzeitig im Voraus an.
+Folge uns auf Social Media oder checke unseren Veranstaltungskalender regelmäßig. Wir kündigen alle kommenden Workshops, Meetups und Community-Sessions rechtzeitig im Voraus an.
