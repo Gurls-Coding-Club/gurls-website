@@ -40,18 +40,18 @@ export const siteConfig = {
   social: {
     instagram: {
       name: "Instagram",
-      url: "https://instagram.com/gurls.club",
-      handle: "@gurls.club",
+      url: "https://www.instagram.com/gurlscodingclubvienna/",
+      handle: "@gurlscodingclubvienna",
     },
     discord: {
       name: "Discord",
-      url: "https://discord.gg/gurls",
-      handle: "discord.gg/gurls",
+      url: "https://discord.com/invite/QGmnZWcgts",
+      handle: "discord.com/invite/QGmnZWcgts",
     },
     linkedin: {
       name: "LinkedIn",
-      url: "https://linkedin.com/company/gurls-club",
-      handle: "gurls-club",
+      url: "https://www.linkedin.com/company/gurls-coding-club/",
+      handle: "gurls-coding-club",
     },
   },
 

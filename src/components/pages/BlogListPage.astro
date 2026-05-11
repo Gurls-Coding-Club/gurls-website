@@ -140,31 +140,6 @@ const blogPosts = (
       </div>
     </Section>
 
-    <!-- Newsletter CTA -->
-    <Section bgColor="cream">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-4">
-          {t("pages.blog.newsletterTitle")}
-        </h2>
-        <p class="text-lg text-primary mb-8">
-          {t("pages.blog.newsletterText")}
-        </p>
-        <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-          <input
-            type="email"
-            placeholder={t("pages.blog.emailPlaceholder")}
-            class="flex-1 px-4 py-3 rounded-full border border-primary bg-white text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-            required
-          />
-          <button
-            type="submit"
-            class="px-8 py-3 bg-primary text-primary-text rounded-full font-medium hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            {t("pages.blog.subscribe")}
-          </button>
-        </form>
-      </div>
-    </Section>
   </main>
 
   <Footer />

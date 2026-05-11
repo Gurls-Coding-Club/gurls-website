@@ -66,12 +66,7 @@ export const navigationItems: NavigationItem[] = [
     labelKey: "nav.events",
     href: "/#events",
   },
-  {
-    type: "link",
-    labelKey: "nav.blog",
-    href: "/blog",
-  },
-  {
+{
     type: "link",
     labelKey: "nav.faq",
     href: "/faq",
