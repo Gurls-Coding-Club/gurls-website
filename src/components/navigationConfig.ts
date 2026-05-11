@@ -57,7 +57,7 @@ export const navigationItems: NavigationItem[] = [
     labelKey: "nav.about",
     items: [
       { label: "nav.ourStory", href: "/#about" },
-      { label: "nav.ourMission", href: "/#mission" },
+      // { label: "nav.ourMission", href: "/#mission" }, // temporarily hidden
       { label: "nav.team", href: "/#team" },
     ],
   },
