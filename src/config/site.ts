@@ -98,6 +98,12 @@ export const siteConfig = {
     accentColor: "#6466e1",
   },
 
+  // External action links
+  links: {
+    joinForm:
+      "https://docs.google.com/forms/d/e/1FAIpQLSenmuLEkrBxjpK_RxbLDWEKbXtlBtR4CUySjJ72Yrq24d2g_A/viewform",
+  },
+
   // Legal information
   legal: {
     fullLegalName:

@@ -6,6 +6,7 @@ import {
   getLocalizedPath,
 } from "../i18n/utils";
 import Button from "./Button.astro";
+import { siteConfig } from "../config/site";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -42,7 +43,7 @@ const t = useTranslations(lang);
       {t("getInvolvedSection.subtitle")}
     </p>
 
-    <Button variant="primary" size="lg" href={getLocalizedPath(lang, "/contact")}>
+    <Button variant="primary" size="lg" href={siteConfig.links.joinForm}>
       {t("getInvolvedSection.cta")}
     </Button>
   </div>

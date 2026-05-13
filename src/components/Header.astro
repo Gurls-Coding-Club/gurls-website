@@ -10,6 +10,7 @@ import { navigationItems, getMobileNavigationItems } from "./navigationConfig";
 import type { DropdownItem } from "./NavigationDropdown.astro";
 import { Icon } from "astro-icon/components";
 import Link from "./Link.astro";
+import { siteConfig } from "../config/site";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -70,7 +71,7 @@ const mobileNavItems = getMobileNavigationItems();
     <div class="flex items-center gap-4">
       <LanguageSelector />
       <a
-        href={getLocalizedPath(lang, "/contact")}
+        href={siteConfig.links.joinForm}
         class="hidden lg:block bg-white text-primary px-6 py-2 rounded-full font-medium hover:bg-cream transition-colors"
       >
         {t("nav.joinUs")}
@@ -102,7 +103,7 @@ const mobileNavItems = getMobileNavigationItems();
         ))
       }
       <a
-        href={getLocalizedPath(lang, "/contact")}
+        href={siteConfig.links.joinForm}
         class="bg-white text-primary px-6 py-2 rounded-full font-medium hover:bg-cream transition-colors text-center"
       >
         {t("nav.joinUs")}

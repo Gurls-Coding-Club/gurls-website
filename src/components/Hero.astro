@@ -8,6 +8,7 @@ import {
 import Button from "./Button.astro";
 import Link from "./Link.astro";
 import { Icon } from "astro-icon/components";
+import { siteConfig } from "../config/site";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -45,7 +46,7 @@ const t = useTranslations(lang);
       </Button>
 
       <Button variant="primary" size="lg">
-        <a href={getLocalizedPath(lang, "/contact")}>
+        <a href={siteConfig.links.joinForm}>
           {t("hero.joinUs")}
         </a>
       </Button>
