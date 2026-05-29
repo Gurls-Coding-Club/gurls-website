@@ -164,6 +164,13 @@
       "ctaText": "Can't find what you're looking for? Feel free to reach out to us directly.",
       "ctaButton": "Contact Us"
     },
+    "team": {
+      "title": "Meet the Team",
+      "description": "Meet the volunteer crew of developers, designers and organizers behind G:URL*s Coding Club in Vienna.",
+      "eyebrow": "Meet the Team",
+      "heading": "The humans behind G:URL*s",
+      "subtitle": "A community of FLINTA*s from all walks of life, united by a passion for IT and a drive to make the tech world more inclusive."
+    },
     "imprint": {
       "title": "Imprint",
       "description": "Legal information and imprint for G:URL*s Coding Club according to Austrian law.",

@@ -164,6 +164,13 @@
       "ctaText": "Kannst du nicht finden, wonach du suchst? Kontaktiere uns gerne direkt.",
       "ctaButton": "Kontaktiere Uns"
     },
+    "team": {
+      "title": "Lerne das Team kennen",
+      "description": "Lerne die ehrenamtlichen Entwickler*innen, Designer*innen und Organisator*innen hinter G:URL*s Coding Club in Wien kennen.",
+      "eyebrow": "Unser Team",
+      "heading": "Die Menschen hinter G:URL*s",
+      "subtitle": "Ein ehrenamtliches Team aus Entwickler*innen, Designer*innen und Organisator*innen, die Wiens Tech-Szene freundlicher gestalten — Workshop für Workshop."
+    },
     "imprint": {
       "title": "Impressum",
       "description": "Rechtliche Informationen und Impressum für G:URL*s Coding Club gemäß österreichischem Recht.",

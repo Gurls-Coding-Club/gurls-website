@@ -1,0 +1,15 @@
+---
+import TeamPage from '../../components/pages/TeamPage.astro';
+import { languages } from '../../i18n/utils';
+import type { Language } from '../../i18n/utils';
+
+export async function getStaticPaths() {
+  return languages.filter(lang => lang !== 'en').map((locale) => ({
+    params: { locale },
+  }));
+}
+
+const { locale } = Astro.params as { locale: Language };
+---
+
+<TeamPage locale={locale} />

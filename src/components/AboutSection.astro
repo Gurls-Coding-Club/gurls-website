@@ -2,12 +2,13 @@
 import { Image } from "astro:assets";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Section from "./Section.astro";
+import Button from "./Button.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Section id="about" bgColor="cream">
+<Section id="about" bgColor="cream" className="pb-12">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-4xl md:text-5xl font-bold mb-8">
       {t("about.title")}
@@ -25,9 +26,15 @@ const t = useTranslations(lang);
       />
     </div>
 
-    <p class="text-lg leading-relaxed text-primary">
+    <p class="text-lg leading-relaxed text-primary mb-8">
       {t("about.description")}
     </p>
+
+    <Button variant="primary">
+      <a href={lang === 'en' ? '/team' : `/${lang}/team`}>
+        {t("pages.team.title")}
+      </a>
+    </Button>
   </div>
 </Section>
 

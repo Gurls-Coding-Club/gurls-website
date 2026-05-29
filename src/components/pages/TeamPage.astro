@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../Header.astro";
+import Footer from "../Footer.astro";
+import Section from "../Section.astro";
+import { useTranslations } from "../../i18n/utils";
+import type { Language } from "../../i18n/utils";
+import { teamMembers } from "../teamData";
+
+interface Props {
+  locale: Language;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<BaseLayout
+  title={t("pages.team.title")}
+  description={t("pages.team.description")}
+>
+  <Header />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <Section bgColor="primary" className="pt-32 pb-24 relative overflow-hidden">
+      <!-- Decorative circles -->
+      <div
+        class="absolute top-8 right-8 w-40 h-40 rounded-full opacity-20"
+        style="background: rgba(255,255,255,0.15);"
+        aria-hidden="true"
+      >
+      </div>
+      <div
+        class="absolute bottom-4 right-32 w-24 h-24 rounded-full opacity-15"
+        style="background: rgba(255,255,255,0.15);"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="max-w-3xl mx-auto text-center relative z-10">
+        <p
+          class="text-sm font-semibold tracking-[0.25em] uppercase mb-4"
+          style="color: rgba(255,255,255,0.7);"
+        >
+          {t("pages.team.eyebrow")}
+        </p>
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white">
+          {t("pages.team.heading")}
+        </h1>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto text-white opacity-85">
+          {t("pages.team.subtitle")}
+        </p>
+      </div>
+    </Section>
+
+    <!-- Team Cards Section -->
+    <Section bgColor="secondary" className="py-16">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {
+            teamMembers.map((member) => (
+              <article class="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow duration-300">
+                <!-- Avatar -->
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    class="w-20 h-20 rounded-full object-cover mb-5"
+                  />
+                ) : (
+                  <div
+                    class="w-20 h-20 rounded-full flex items-center justify-center mb-5 flex-shrink-0"
+                    style={`background-color: ${member.avatarColor};`}
+                    aria-hidden="true"
+                  >
+                    <span
+                      class="text-xl font-bold select-none"
+                      style="color: rgba(0,0,0,0.55);"
+                    >
+                      {member.initials}
+                    </span>
+                  </div>
+                )}
+
+                <!-- Name -->
+                <h2 class="text-lg font-bold text-[var(--color-text-dark)] mb-1">
+                  {member.name}
+                </h2>
+
+                <!-- Role -->
+                <p class="text-sm font-semibold text-[var(--color-primary)] mb-3">
+                  {member.role}
+                </p>
+
+                <!-- Description -->
+                <p class="text-sm text-[var(--color-text-dark)] leading-relaxed opacity-80">
+                  {member.description}
+                </p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </Section>
+  </main>
+
+  <Footer />
+</BaseLayout>
