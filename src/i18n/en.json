@@ -169,7 +169,16 @@
       "description": "Meet the volunteer crew of developers, designers and organizers behind G:URL*s Coding Club in Vienna.",
       "eyebrow": "Meet the Team",
       "heading": "The humans behind G:URL*s",
-      "subtitle": "A community of FLINTA*s from all walks of life, united by a passion for IT and a drive to make the tech world more inclusive."
+      "subtitle": "A community of FLINTA*s from all walks of life, united by a passion for IT and a drive to make the tech world more inclusive.",
+      "whoWeAreEyebrow": "Who We Are",
+      "whoWeAreHeading": "A community built on diversity",
+      "whoWeAreText": "The G:URL*s coding club was started by a group of FLINTA*s with diverse backgrounds and a passion for IT. Even though our club and our team is growing, our dedication to diversity is still strong. Although we come from a variety of national and ethnic backgrounds as well as fields of study and professions, we are united by our passion to expose more FLINTA* people to the world of IT and programming, while creating a community to facilitate growth in a supportive environment. We are grateful to everyone who wants to be a part of this journey with us.",
+      "calloutEyebrow": "A lot of people ask us",
+      "calloutQuestion": "Do I need to be a student to join this club?",
+      "calloutAnswer": "No!",
+      "calloutAnswerSub": "— and we mean it.",
+      "signUpCta": "Sign up to join",
+      "signUpText": "We want to unite all FLINTA* people at different points in their lives. Not even all our team members are students: we work in many different IT fields and want to continue to expand our pool of members. If you are interested in becoming a part of the club or joining our organisational team, sign up below."
     },
     "imprint": {
       "title": "Imprint",

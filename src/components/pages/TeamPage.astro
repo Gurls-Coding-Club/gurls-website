@@ -6,6 +6,7 @@ import Section from "../Section.astro";
 import { useTranslations } from "../../i18n/utils";
 import type { Language } from "../../i18n/utils";
 import { teamMembers } from "../teamData";
+import { siteConfig } from "../../config/site";
 
 interface Props {
   locale: Language;
@@ -50,6 +51,24 @@ const t = useTranslations(locale);
         </h1>
         <p class="text-lg md:text-xl max-w-2xl mx-auto text-white opacity-85">
           {t("pages.team.subtitle")}
+        </p>
+      </div>
+    </Section>
+
+    <!-- Who We Are -->
+    <Section bgColor="cream" className="py-20">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[var(--color-primary)] mb-3">
+            {t("pages.team.whoWeAreEyebrow")}
+          </p>
+          <h2 class="text-4xl font-bold text-[var(--color-text-dark)] mb-4 leading-tight">
+            {t("pages.team.whoWeAreHeading")}
+          </h2>
+          <div class="w-10 h-1 bg-[var(--color-primary)] rounded"></div>
+        </div>
+        <p class="text-base leading-relaxed text-[var(--color-text-dark)] opacity-80">
+          {t("pages.team.whoWeAreText")}
         </p>
       </div>
     </Section>
@@ -101,6 +120,43 @@ const t = useTranslations(locale);
             ))
           }
         </div>
+      </div>
+    </Section>
+
+    <!-- "Do I need to be a student?" callout -->
+    <Section bgColor="primary" className="py-16">
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="md:max-w-lg">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: rgba(255,255,255,0.6);">
+            {t("pages.team.calloutEyebrow")}
+          </p>
+          <p class="text-2xl md:text-3xl font-bold text-white leading-snug">
+            "{t("pages.team.calloutQuestion")}"
+          </p>
+        </div>
+        <div class="text-center flex-shrink-0">
+          <p class="text-7xl md:text-8xl font-extrabold text-white leading-none">
+            {t("pages.team.calloutAnswer")}
+          </p>
+          <p class="text-sm font-semibold tracking-widest uppercase mt-2" style="color: rgba(255,255,255,0.6);">
+            {t("pages.team.calloutAnswerSub")}
+          </p>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Sign up CTA -->
+    <Section bgColor="cream" className="py-20">
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <a
+          href={siteConfig.links.joinForm}
+          class="flex-shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-primary)] text-white font-semibold rounded-full hover:opacity-90 transition-opacity duration-200 shadow-md whitespace-nowrap"
+        >
+          {t("pages.team.signUpCta")} →
+        </a>
+        <p class="text-base leading-relaxed text-[var(--color-text-dark)] opacity-80">
+          {t("pages.team.signUpText")}
+        </p>
       </div>
     </Section>
   </main>

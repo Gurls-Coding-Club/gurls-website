@@ -169,7 +169,16 @@
       "description": "Lerne die ehrenamtlichen Entwickler*innen, Designer*innen und Organisator*innen hinter G:URL*s Coding Club in Wien kennen.",
       "eyebrow": "Unser Team",
       "heading": "Die Menschen hinter G:URL*s",
-      "subtitle": "Ein ehrenamtliches Team aus Entwickler*innen, Designer*innen und Organisator*innen, die Wiens Tech-Szene freundlicher gestalten — Workshop für Workshop."
+      "subtitle": "Ein ehrenamtliches Team aus Entwickler*innen, Designer*innen und Organisator*innen, die Wiens Tech-Szene freundlicher gestalten — Workshop für Workshop.",
+      "whoWeAreEyebrow": "Wer Wir Sind",
+      "whoWeAreHeading": "Eine Community, die auf Vielfalt aufgebaut ist",
+      "whoWeAreText": "Der G:URL*s Coding Club wurde von einer Gruppe von FLINTA*s mit unterschiedlichen Hintergründen und einer Leidenschaft für IT gegründet. Obwohl unser Club und unser Team wächst, ist unser Engagement für Vielfalt nach wie vor stark. Obwohl wir aus verschiedenen nationalen und ethnischen Hintergründen sowie Studien- und Berufsfeldern kommen, sind wir durch unsere Leidenschaft vereint, mehr FLINTA* Menschen die Welt der IT und Programmierung näherzubringen und eine Community zu schaffen, die Wachstum in einem unterstützenden Umfeld fördert.",
+      "calloutEyebrow": "Viele fragen uns",
+      "calloutQuestion": "Muss ich Student*in sein, um diesem Club beizutreten?",
+      "calloutAnswer": "Nein!",
+      "calloutAnswerSub": "— und das meinen wir ernst.",
+      "signUpCta": "Jetzt anmelden",
+      "signUpText": "Wir möchten alle FLINTA* Menschen in verschiedenen Lebensphasen vereinen. Nicht einmal alle unsere Teammitglieder sind Studierende: Wir arbeiten in vielen verschiedenen IT-Bereichen und möchten unseren Mitgliederkreis weiter ausbauen. Wenn du Teil des Clubs oder unseres Organisationsteams werden möchtest, melde dich unten an."
     },
     "imprint": {
       "title": "Impressum",
