@@ -61,7 +61,7 @@ export const teamMembers: TeamMember[] = [
     name: "Pierre",
     initials: "P",
     avatarColor: "#ffe0b2",
-    role: "HR Team",
+    role: "HR",
     description:
       "Currently studying molecular biology and working in sales. Fun fact: \"I can tell the manufacturer of a roller coaster by the look of the tracks.\"",
     image: "/team/pierre.jpg",
@@ -88,7 +88,7 @@ export const teamMembers: TeamMember[] = [
     name: "Anja",
     initials: "A",
     avatarColor: "#ffcdd2",
-    role: "HR Team",
+    role: "HR",
     description:
       "Holds a Master's in Cognitive Science and puts her passion for understanding people to work on the club's HR team. Fun fact: despite studying the human mind, her brain refuses to function without coffee first.",
     image: "/team/anja.jpg",
@@ -97,7 +97,7 @@ export const teamMembers: TeamMember[] = [
     name: "Anna",
     initials: "A",
     avatarColor: "#fff9c4",
-    role: "HR Team",
+    role: "HR",
     description:
       "Currently doing her PhD in Theoretical Biology, where she tries to understand evolutionary processes through statistical analyses in R. Outside of research, you'll likely find her doing sports or watching horror movies.",
     image: "/team/anna.jpg",
