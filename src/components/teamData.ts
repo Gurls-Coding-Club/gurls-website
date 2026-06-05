@@ -93,4 +93,13 @@ export const teamMembers: TeamMember[] = [
       "Holds a Master's in Cognitive Science and puts her passion for understanding people to work on the club's HR team. Fun fact: despite studying the human mind, her brain refuses to function without coffee first.",
     image: "/team/anja.jpg",
   },
+  {
+    name: "Anna",
+    initials: "A",
+    avatarColor: "#fff9c4",
+    role: "HR Team",
+    description:
+      "Currently doing her PhD in Theoretical Biology, where she tries to understand evolutionary processes through statistical analyses in R. Outside of research, you'll likely find her doing sports or watching horror movies.",
+    image: "/team/anna.jpg",
+  },
 ];
