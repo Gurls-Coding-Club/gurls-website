@@ -43,7 +43,7 @@ export const teamMembers: TeamMember[] = [
     name: "Laura",
     initials: "L",
     avatarColor: "#c8e6c9",
-    role: "Co-Founder & Project Management",
+    role: "Co-Founder & Project Management Lead",
     description:
       "Organises projects and events and leads workshops. If you ever see her working, you'll notice she needs at least 3–4 different drinks to keep up concentration.",
     image: "/team/laura.jpg",
