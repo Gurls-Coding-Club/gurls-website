@@ -178,7 +178,19 @@
       "calloutAnswer": "No!",
       "calloutAnswerSub": "— and we mean it.",
       "signUpCta": "Sign up to join",
-      "signUpText": "We want to unite all FLINTA* people at different points in their lives. Not even all our team members are students: we work in many different IT fields and want to continue to expand our pool of members. If you are interested in becoming a part of the club or joining our organisational team, sign up below."
+      "signUpText": "We want to unite all FLINTA* people at different points in their lives. Not even all our team members are students: we work in many different IT fields and want to continue to expand our pool of members. If you are interested in becoming a part of the club or joining our organisational team, sign up below.",
+      "members": {
+        "emily": "Passionate about bioinformatics and investigating biological questions with code using R and Python. In her free time you can find her running or hiking and exploring the Austrian countryside.",
+        "lara": "Software developer building C# applications for train production. Loves organising events, inline skating, gaming, and meeting new people. Fun fact: invite her over and she'll show up with a home-made cake!",
+        "laura": "Organises projects and events and leads workshops. If you ever see her working, you'll notice she needs at least 3–4 different drinks to keep up concentration.",
+        "julia": "Responsible for strategy and partner relationship management. Works in IT consulting, supporting companies in their digital transformation. Motivated to make the tech industry a more inclusive and diverse space.",
+        "pierre": "Currently studying molecular biology and working in sales. Fun fact: \"I can tell the manufacturer of a roller coaster by the look of the tracks.\"",
+        "bibi": "Software Engineer at Vendure. Passionate about bouldering, board games, and making change in the tech industry. Fun fact: can do a pull-up.",
+        "andreea": "Passionate about telecommunications, working as a Software Engineer at a small telco company. In her free time she likes playing tennis, reading, and doing all kinds of DIY things.",
+        "anja": "Holds a Master's in Cognitive Science and puts her passion for understanding people to work on the club's HR team. Fun fact: despite studying the human mind, her brain refuses to function without coffee first.",
+        "marjan": "Has a master's degree in computer engineering and works in an IT company. In her free time, she enjoys content creation, photography, and discovering new music while enjoying a cup of tea.",
+        "anna": "Currently doing her PhD in Theoretical Biology, where she tries to understand evolutionary processes through statistical analyses in R. Outside of research, you'll likely find her doing sports or watching horror movies."
+      }
     },
     "imprint": {
       "title": "Imprint",

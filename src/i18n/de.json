@@ -178,7 +178,19 @@
       "calloutAnswer": "Nein!",
       "calloutAnswerSub": "— und das meinen wir ernst.",
       "signUpCta": "Jetzt anmelden",
-      "signUpText": "Wir möchten alle FLINTA* Menschen in verschiedenen Lebensphasen vereinen. Nicht einmal alle unsere Teammitglieder sind Studierende: Wir arbeiten in vielen verschiedenen IT-Bereichen und möchten unseren Mitgliederkreis weiter ausbauen. Wenn du Teil des Clubs oder unseres Organisationsteams werden möchtest, melde dich unten an."
+      "signUpText": "Wir möchten alle FLINTA* Menschen in verschiedenen Lebensphasen vereinen. Nicht einmal alle unsere Teammitglieder sind Studierende: Wir arbeiten in vielen verschiedenen IT-Bereichen und möchten unseren Mitgliederkreis weiter ausbauen. Wenn du Teil des Clubs oder unseres Organisationsteams werden möchtest, melde dich unten an.",
+      "members": {
+        "emily": "Leidenschaftlich an Bioinformatik interessiert und begeistert davon, biologische Fragen mit Code in R und Python zu untersuchen. In ihrer Freizeit findet man sie beim Laufen oder Wandern in der österreichischen Natur.",
+        "lara": "Softwareentwicklerin und baut C#-Applikationen für die Zugproduktion. Liebt es, Events zu organisieren, Inline-Skaten, Zocken und neue Menschen kennenzulernen. Fun Fact: Lad sie ein und sie kommt mit einem selbstgebackenen Kuchen!",
+        "laura": "Organisiert Projekte und Events und leitet Workshops. Wenn man sie bei der Arbeit beobachtet, fällt auf, dass sie mindestens 3–4 verschiedene Getränke braucht, um konzentriert zu bleiben.",
+        "julia": "Verantwortlich für Strategie und Partnermanagement. Arbeitet in der IT-Beratung und unterstützt Unternehmen bei ihrer digitalen Transformation. Motiviert, die Tech-Branche inklusiver und vielfältiger zu gestalten.",
+        "pierre": "Studiert derzeit Molekularbiologie und arbeitet im Vertrieb. Fun Fact: \"Ich kann den Hersteller einer Achterbahn am Aussehen der Schienen erkennen.\"",
+        "bibi": "Software Engineer bei Vendure. Begeistert von Bouldern, Brettspielen und dem Wandel in der Tech-Branche. Fun Fact: Kann einen Klimmzug machen.",
+        "andreea": "Begeistert von Telekommunikation, tätig als Software Engineer bei einem kleinen Telekommunikationsunternehmen. In ihrer Freizeit spielt sie Tennis, liest und macht gerne DIY-Projekte aller Art.",
+        "anja": "Hat einen Master in Kognitionswissenschaft und bringt ihre Leidenschaft für das Verstehen von Menschen ins HR-Team des Clubs ein. Fun Fact: Obwohl sie den menschlichen Geist studiert, funktioniert ihr eigenes Gehirn ohne Kaffee nicht.",
+        "marjan": "Hat einen Master in Informatik und arbeitet in einem IT-Unternehmen. In ihrer Freizeit genießt sie Content Creation, Fotografie und das Entdecken neuer Musik bei einer Tasse Tee.",
+        "anna": "Macht derzeit ihren Doktortitel in Theoretischer Biologie, wo sie versucht, evolutionäre Prozesse durch statistische Analysen in R zu verstehen. Außerhalb der Forschung findet man sie wahrscheinlich beim Sport oder beim Anschauen von Horrorfilmen."
+      }
     },
     "imprint": {
       "title": "Impressum",

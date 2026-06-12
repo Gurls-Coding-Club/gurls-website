@@ -14,7 +14,7 @@
 export interface TeamMember {
   name: string;
   role: string;
-  description: string;
+  descriptionKey: string;
   initials: string;
   avatarColor: string;
   image?: string;
@@ -26,8 +26,7 @@ export const teamMembers: TeamMember[] = [
     initials: "E",
     avatarColor: "#f8bbd0",
     role: "Co-Founder & HR Lead",
-    description:
-      "Passionate about bioinformatics and investigating biological questions with code using R and Python. In her free time you can find her running or hiking and exploring the Austrian countryside.",
+    descriptionKey: "pages.team.members.emily",
     image: "/team/emily.jpg",
   },
   {
@@ -35,8 +34,7 @@ export const teamMembers: TeamMember[] = [
     initials: "L",
     avatarColor: "#b3e5fc",
     role: "Co-Founder & Social Media Lead",
-    description:
-      "Software developer building C# applications for train production. Loves organising events, inline skating, gaming, and meeting new people. Fun fact: invite her over and she'll show up with a home-made cake!",
+    descriptionKey: "pages.team.members.lara",
     image: "/team/lara.jpg",
   },
   {
@@ -44,8 +42,7 @@ export const teamMembers: TeamMember[] = [
     initials: "L",
     avatarColor: "#c8e6c9",
     role: "Co-Founder & Project Management Lead",
-    description:
-      "Organises projects and events and leads workshops. If you ever see her working, you'll notice she needs at least 3–4 different drinks to keep up concentration.",
+    descriptionKey: "pages.team.members.laura",
     image: "/team/laura.jpg",
   },
   {
@@ -53,8 +50,7 @@ export const teamMembers: TeamMember[] = [
     initials: "J",
     avatarColor: "#c5cae9",
     role: "Strategy & Partnerships",
-    description:
-      "Responsible for strategy and partner relationship management. Works in IT consulting, supporting companies in their digital transformation. Motivated to make the tech industry a more inclusive and diverse space.",
+    descriptionKey: "pages.team.members.julia",
     image: "/team/julia.jpg",
   },
   {
@@ -62,8 +58,7 @@ export const teamMembers: TeamMember[] = [
     initials: "P",
     avatarColor: "#ffe0b2",
     role: "HR",
-    description:
-      "Currently studying molecular biology and working in sales. Fun fact: \"I can tell the manufacturer of a roller coaster by the look of the tracks.\"",
+    descriptionKey: "pages.team.members.pierre",
     image: "/team/pierre.jpg",
   },
   {
@@ -71,8 +66,7 @@ export const teamMembers: TeamMember[] = [
     initials: "B",
     avatarColor: "#d1c4e9",
     role: "Project Management",
-    description:
-      "Software Engineer at Vendure. Passionate about bouldering, board games, and making change in the tech industry. Fun fact: can do a pull-up.",
+    descriptionKey: "pages.team.members.bibi",
     image: "/team/bibi.jpg",
   },
   {
@@ -80,8 +74,7 @@ export const teamMembers: TeamMember[] = [
     initials: "A",
     avatarColor: "#b2dfdb",
     role: "Project Management",
-    description:
-      "Passionate about telecommunications, working as a Software Engineer at a small telco company. In her free time she likes playing tennis, reading, and doing all kinds of DIY things.",
+    descriptionKey: "pages.team.members.andreea",
     image: "/team/andreea.jpg",
   },
   {
@@ -89,8 +82,7 @@ export const teamMembers: TeamMember[] = [
     initials: "A",
     avatarColor: "#ffcdd2",
     role: "HR",
-    description:
-      "Holds a Master's in Cognitive Science and puts her passion for understanding people to work on the club's HR team. Fun fact: despite studying the human mind, her brain refuses to function without coffee first.",
+    descriptionKey: "pages.team.members.anja",
     image: "/team/anja.jpg",
   },
   {
@@ -98,8 +90,7 @@ export const teamMembers: TeamMember[] = [
     initials: "M",
     avatarColor: "#dcedc8",
     role: "Social Media",
-    description:
-      "Has a master's degree in computer engineering and works in an IT company. In her free time, she enjoys content creation, photography, and discovering new music while enjoying a cup of tea.",
+    descriptionKey: "pages.team.members.marjan",
     image: "/team/marjan.jpg",
   },
   {
@@ -107,8 +98,7 @@ export const teamMembers: TeamMember[] = [
     initials: "A",
     avatarColor: "#fff9c4",
     role: "HR",
-    description:
-      "Currently doing her PhD in Theoretical Biology, where she tries to understand evolutionary processes through statistical analyses in R. Outside of research, you'll likely find her doing sports or watching horror movies.",
+    descriptionKey: "pages.team.members.anna",
     image: "/team/anna.jpg",
   },
 ];
