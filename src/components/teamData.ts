@@ -94,6 +94,15 @@ export const teamMembers: TeamMember[] = [
     image: "/team/anja.jpg",
   },
   {
+    name: "Marjan",
+    initials: "M",
+    avatarColor: "#dcedc8",
+    role: "Social Media",
+    description:
+      "Has a master's degree in computer engineering and works in an IT company. In her free time, she enjoys content creation, photography, and discovering new music while enjoying a cup of tea.",
+    image: "/team/marjan.jpg",
+  },
+  {
     name: "Anna",
     initials: "A",
     avatarColor: "#fff9c4",
