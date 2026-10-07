@@ -1,0 +1,52 @@
+---
+/**
+ * Round avatar for team members: shows the photo if available,
+ * otherwise a colored circle with the member's initials.
+ */
+interface Props {
+  name: string;
+  initials: string;
+  avatarColor: string;
+  image?: string;
+  /** 'lg' for current team cards, 'sm' for compact past-member entries. */
+  size?: "sm" | "lg";
+  className?: string;
+}
+
+const {
+  name,
+  initials,
+  avatarColor,
+  image,
+  size = "lg",
+  className = "",
+} = Astro.props;
+
+const sizeClasses = {
+  sm: { box: "w-12 h-12", text: "text-base" },
+  lg: { box: "w-20 h-20", text: "text-xl" },
+};
+
+const { box, text } = sizeClasses[size];
+---
+
+{
+  image ? (
+    <img
+      src={image}
+      alt={name}
+      class={`${box} rounded-full object-cover flex-shrink-0 ${className}`}
+      loading="lazy"
+    />
+  ) : (
+    <div
+      class={`${box} rounded-full flex items-center justify-center flex-shrink-0 ${className}`}
+      style={`background-color: ${avatarColor};`}
+      aria-hidden="true"
+    >
+      <span class={`${text} font-bold select-none`} style="color: rgba(0,0,0,0.55);">
+        {initials}
+      </span>
+    </div>
+  )
+}

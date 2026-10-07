@@ -102,3 +102,25 @@ export const teamMembers: TeamMember[] = [
     image: "/team/anna.jpg",
   },
 ];
+
+/**
+ * Past Team Members (Alumni)
+ *
+ * People who used to be part of the organising team. When someone leaves,
+ * move them from `teamMembers` into this array (no description needed).
+ * - role: The role they held while on the team
+ * - years: (optional) Time on the team, e.g. "2022–2024"
+ *
+ * The "Past team members" section is hidden while this array is empty.
+ */
+
+export interface PastTeamMember {
+  name: string;
+  role: string;
+  initials: string;
+  avatarColor: string;
+  image?: string;
+  years?: string;
+}
+
+export const pastTeamMembers: PastTeamMember[] = [];

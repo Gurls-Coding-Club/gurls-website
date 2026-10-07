@@ -5,7 +5,8 @@ import Footer from "../Footer.astro";
 import Section from "../Section.astro";
 import { useTranslations } from "../../i18n/utils";
 import type { Language } from "../../i18n/utils";
-import { teamMembers } from "../teamData";
+import TeamAvatar from "../TeamAvatar.astro";
+import { teamMembers, pastTeamMembers } from "../teamData";
 import { siteConfig } from "../../config/site";
 
 interface Props {
@@ -80,27 +81,7 @@ const t = useTranslations(locale);
           {
             teamMembers.map((member) => (
               <article class="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow duration-300">
-                <!-- Avatar -->
-                {member.image ? (
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    class="w-20 h-20 rounded-full object-cover mb-5"
-                  />
-                ) : (
-                  <div
-                    class="w-20 h-20 rounded-full flex items-center justify-center mb-5 flex-shrink-0"
-                    style={`background-color: ${member.avatarColor};`}
-                    aria-hidden="true"
-                  >
-                    <span
-                      class="text-xl font-bold select-none"
-                      style="color: rgba(0,0,0,0.55);"
-                    >
-                      {member.initials}
-                    </span>
-                  </div>
-                )}
+                <TeamAvatar {...member} className="mb-5" />
 
                 <!-- Name -->
                 <h2 class="text-lg font-bold text-[var(--color-text-dark)] mb-1">
@@ -122,6 +103,49 @@ const t = useTranslations(locale);
         </div>
       </div>
     </Section>
+
+    <!-- Past Team Members -->
+    {
+      pastTeamMembers.length > 0 && (
+        <Section bgColor="cream" className="py-20">
+          <div class="max-w-5xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+              <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[var(--color-primary)] mb-3">
+                {t("pages.team.pastMembersEyebrow")}
+              </p>
+              <h2 class="text-3xl md:text-4xl font-bold text-[var(--color-text-dark)] mb-4 leading-tight">
+                {t("pages.team.pastMembersHeading")}
+              </h2>
+              <div class="w-10 h-1 bg-[var(--color-primary)] rounded mx-auto mb-5" />
+              <p class="text-base leading-relaxed text-[var(--color-text-dark)] opacity-80">
+                {t("pages.team.pastMembersText")}
+              </p>
+            </div>
+
+            <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {pastTeamMembers.map((member) => (
+                <li class="flex items-center gap-4 bg-white/70 rounded-xl border border-[var(--color-primary)]/10 px-5 py-4">
+                  <TeamAvatar {...member} size="sm" />
+                  <div class="min-w-0">
+                    <h3 class="font-bold text-[var(--color-text-dark)] leading-tight">
+                      {member.name}
+                    </h3>
+                    <p class="text-sm text-[var(--color-primary)] font-medium">
+                      {member.role}
+                    </p>
+                    {member.years && (
+                      <p class="text-xs text-[var(--color-text-dark)] opacity-70 mt-0.5">
+                        {member.years}
+                      </p>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Section>
+      )
+    }
 
     <!-- "Do I need to be a student?" callout -->
     <Section bgColor="primary" className="py-16">
