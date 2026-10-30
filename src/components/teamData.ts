@@ -70,14 +70,6 @@ export const teamMembers: TeamMember[] = [
     image: "/team/bibi.jpg",
   },
   {
-    name: "Anja",
-    initials: "A",
-    avatarColor: "#ffcdd2",
-    role: "HR",
-    descriptionKey: "pages.team.members.anja",
-    image: "/team/anja.jpg",
-  },
-  {
     name: "Marjan",
     initials: "M",
     avatarColor: "#dcedc8",
@@ -123,5 +115,12 @@ export const pastTeamMembers: PastTeamMember[] = [
     role: "Project Management",
     image: "/team/andreea.jpg",
     years: "2025–2026",
+  },
+  {
+    name: "Anja",
+    initials: "A",
+    avatarColor: "#ffcdd2",
+    role: "HR",
+    image: "/team/anja.jpg",
   },
 ];
